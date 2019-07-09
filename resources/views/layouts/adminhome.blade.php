@@ -160,7 +160,7 @@
 
 
         <div class="content mt-3">
-
+            @include('flash-message')
             @yield('content')
 
         </div> <!-- .content -->
