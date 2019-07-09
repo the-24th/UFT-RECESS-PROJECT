@@ -13,7 +13,7 @@ class PageController extends Controller
 
     public function list(){
         $adds = DB::select('select * from agents');
-        return view('agentslist', compact('adds'));
+        return view('agentslist', compact('adds'))->with('SUCCESS', 'DATA ADDED');
     }
 
     public function arch(){

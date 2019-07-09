@@ -17,7 +17,7 @@ class forms extends Controller
         $add->sex = request('gender');
         $add->signature = request('sign');
         $add->save();
-        return redirect('agentslist')->with('success', 'DATA ADDED');
+        return redirect('agentslist');
     }
 
 }
