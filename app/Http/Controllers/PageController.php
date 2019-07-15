@@ -12,6 +12,7 @@ class PageController extends Controller
     }
 
     public function list(){
+        
         $adds = DB::select('select * from agents');
         return view('agentslist', compact('adds'));
     }
@@ -44,6 +45,23 @@ class PageController extends Controller
     public function up(){
         return view('upgrade');
     }
+
+    public function high(){
+        return view('highest');
+    }
+
+    public function ahigh(){
+        return view('agents');
+    }
+
+    public function ahead(){
+        return view('agenthead');
+    }
+
+    public function agent(){
+        return view('normal');
+    }
+
 
     public function money(){
         $donors = DB::select('select * from donations');

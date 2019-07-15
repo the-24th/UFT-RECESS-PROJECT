@@ -82,13 +82,22 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-line-chart"></i><a href="/funding">Funding</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="/donation">Donations</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="/graph">Donations</a></li>
                             <li><i class="menu-icon fa fa-pie-chart"></i><a href="/enroll">Enrollment</a></li>
                         </ul>
                     </li>
                     <li class="active">
                             <a href="/tre" > <i class="menu-icon fa fa-bar-chart"></i>Treasury </a>
                         </li>
+                        <li class="menu-item-has-children dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Payments</a>
+                                <ul class="sub-menu children dropdown-menu">
+                                <li><i class="menu-icon fa fa-line-chart"></i><a href="/high">Agent heads:highest enrollment</a></li>
+                                <li><i class="menu-icon fa fa-line-chart"></i><a href="/ahigh">Agents: highest enrollment</a></li>
+                                <li><i class="menu-icon fa fa-line-chart"></i><a href="/ahead">Agent heads</a></li>
+                                <li><i class="menu-icon fa fa-line-chart"></i><a href="/agent">Agents</a></li>
+                            </ul>
+                            </li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -104,6 +113,7 @@
         <!-- Header-->
         <header id="header" class="">
 
+
                 <div id="app">
                         <nav class="navbar navbar-expand-md navbar-light">
                             <div class="container">
@@ -114,9 +124,7 @@
 
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <!-- Left Side Of Navbar -->
-                                    <ul class="navbar-nav mr-auto">
 
-                                    </ul>
 
                                     <!-- Right Side Of Navbar -->
                                     <ul class="navbar-nav ml-auto">
@@ -156,6 +164,7 @@
 
         </header><!-- /header -->
         <!-- Header-->
+
 
 
 

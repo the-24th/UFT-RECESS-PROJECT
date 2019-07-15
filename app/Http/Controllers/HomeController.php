@@ -36,6 +36,28 @@ class HomeController extends Controller
         $query3 = 'select count(agentid) as "agent" from agents';
         $res3 = mysqli_query($conn, $query3);
         $data3 = mysqli_fetch_array($res3);
-        return view('home')->with('data1',$data1)->with('data2',$data2)->with('data3',$data3);
+
+
+        $sql = "SELECT * from agents group by district_assigned";
+        $result = mysqli_query($conn, $sql);
+        while($rows = mysqli_fetch_array($result))
+        {
+	    $agentid = $rows['agentid'];
+	    $fname = $rows['fname'];
+	    $lname = $rows['lname'];
+	    $sex = $rows['sex'];
+	    $district = $rows['district'];
+	    $number = $rows['number'];
+	    $district_assigned = $rows['district_assigned'];
+	    $date = $rows['date'];
+	    $signature = $rows['signature'];
+			$work = "INSERT into agentheads(agentid, fname, lname, sex, district, number,  district_assigned, date, signature)
+            values('$agentid', '$fname', '$lname', '$sex', '$district', '$number', '$district_assigned', '$date', '$signature')";
+            mysqli_query($conn, $work);
+        }
+
+
+        $adds = DB::select('select * from agentheads');
+        return view('home')->with('data1',$data1)->with('data2',$data2)->with('data3',$data3)->with('adds',$adds);
     }
 }

@@ -22,6 +22,7 @@ class CreateAgentsTable extends Migration
             $table->timestamp('date');
             $table->string('sex');
             $table->string('signature');
+            $table->string('district_assigned');
             $table->timestamps();
         });
     }

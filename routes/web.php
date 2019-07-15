@@ -23,9 +23,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //
 
-Route::post('/register', 'forms@register');
+Route::post('/registeragent', 'forms@register');
+
+Route::post('/looks' , 'search@agents');
+
+Route::post('/looksagenthead', 'search@agenthead');
+
+Route::post('/looking' , 'search@members');
 
 Route::post('/reg', 'donate@donate');
+
+Route::post('/donate', 'search@donation');
 
 Route::get('/agentregister', 'PageController@index');
 
@@ -47,4 +55,13 @@ Route::get('/moneyregister', 'PageController@mon');
 
 Route::get('/upgrade', 'PageController@up');
 
+Route::get('/high', 'PageController@high');
+Route::get('/ahigh', 'PageController@ahigh');
+Route::get('/ahead', 'PageController@ahead');
+Route::get('/agent', 'PageController@agent');
 
+
+
+Route::get('/graph', function () {
+    return view('Graphs');
+});
