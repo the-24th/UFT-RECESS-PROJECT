@@ -4,10 +4,14 @@
 @section('content')
 
 
+
 <div class="card">
         <div class="card-header"><strong>AGENT REGISTRATION FORM</strong></div>
         <div class="card-body card-block">
             <form method="post" action="/registeragent">
+
+
+
                 {{ csrf_field() }}
             <div class="form-group"><label for="first_name" class=" form-control-label">First Name</label><input name="fname" type="text" id="company" placeholder="Enter first name" required class="form-control"></div>
             <div class="form-group"><label for="company" class=" form-control-label">Last Name</label><input name="lname" type="text" id="company" placeholder="Enter last name" required class="form-control"></div>

@@ -12,6 +12,7 @@
                             <strong class="card-title">List of Agents</strong>
                         </div>
                         <div class="card-body">
+
                                 <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
                                     <form method="post" action="/looks">
                                         {{ csrf_field() }}
@@ -21,6 +22,7 @@
                                     </label>
                                     </form>
                                 </div>
+
 
 
                             <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -43,7 +45,11 @@
                                     <td>{{$add->fname}}</td>
                                     <td>{{$add->lname}}</td>
                                     <td>{{$add->sex}}</td>
+<<<<<<< HEAD
                                     <td>{{$add->district_assigned}}</td>
+=======
+                                    <td></td>
+>>>>>>> 1722a5d612e2252036dec965f5a24d0bd515d1ea
                                     <td>{{$add->date}}</td>
                                     <td>{{$add->signature}}</td>
                                     </tr>
