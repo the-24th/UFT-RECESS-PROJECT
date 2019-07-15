@@ -498,6 +498,30 @@
   background: #17a2b8 !important;
   border-color: #117a8b; }
 
+  .btn{
+    background-color:blue; 
+    color:white;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+    
+  }
+
+  .btn:hover{
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0,2), 0 6px 20px 0 rgba(0,0,0,0,19);
+    border:2px solid blue;
+    background-color:white;
+    border-radius:5px;
+    color:blue;
+}
+
+.btn:active{
+  background-color:red;
+  box-shadow:0 5px #666;
+  transform:translateY(4px);
+  border:2px solid red;
+  color:white;
+}
+
 .switch-info > .switch-input:checked ~ .switch-handle {
   border-color: #117a8b; }
 
@@ -1336,7 +1360,7 @@ header.fixed-top {
   width: 43px;
   line-height: 38px; }
 
-header .form-inline {
+header inline {
   background: #263238;
   display: none;
   height: 70px;

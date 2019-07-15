@@ -9,15 +9,22 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+
+        
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-image: url('../images/ug.jpg');
+                background-size: 700px 650px;
+                background-repeat:no-repeat;
+                background-position:left;
+                background-color:black;
+                color: white;
                 font-family: 'Nunito', sans-serif;
-                font-weight: 200;
+                font-weight: 400;
                 height: 100vh;
                 margin: 0;
+                
             }
 
             .full-height {
@@ -42,10 +49,13 @@
 
             .content {
                 text-align: center;
+                margin-left:800px;
             }
 
             .title {
-                font-size: 84px;
+                font-size: 200px;
+                font-weight:bold;
+              
             }
 
             .links > a {
@@ -70,10 +80,10 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}"><b><u>Login</u></b></a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}"><b><u>Register</u></b></a>
                         @endif
                     @endauth
                 </div>
@@ -85,7 +95,7 @@
                 </div>
 
                 <div class="links">
-                    <p>UNITED FRONT FOR TRANSFORMATION POLITICAL PARTY</p>
+                    <p><b>UNITED FRONT FOR TRANSFORMATION POLITICAL PARTY</b></p>
                 </div>
             </div>
         </div>
