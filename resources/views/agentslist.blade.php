@@ -26,6 +26,18 @@
                                 </div>
 
 
+                                <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
+                                    <form method="post" action="/looks">
+                                        {{ csrf_field() }}
+                                    <label>Search:
+                                        <p><input type="search" name="search" class="form-control form-control-sm" placeholder="" aria-controls="bootstrap-data-table-export">
+                                        <button type="submit" class="btn btn-primary btn-sm">search</button></p>
+                                    </label>
+                                    </form>
+                                </div>
+
+
+
                             <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
@@ -51,6 +63,7 @@
                                     <td>{{$add->district}}</td>
                                     <td>{{$add->number}}</td>
                                     <td>{{$add->district_assigned}}</td>
+                                   
                                     <td>{{$add->date}}</td>
                                     <td>{{$add->signature}}</td>
                                     </tr>

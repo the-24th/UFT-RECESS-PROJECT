@@ -72,4 +72,5 @@ class search extends Controller
 
         return view('agentheadsearch')->with('finds',$finds)->with('data1',$data1)->with('data2',$data2)->with('data3',$data3);
     }
+
 }

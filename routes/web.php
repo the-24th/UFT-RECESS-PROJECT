@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //
 
+
 Route::post('/registeragent', 'forms@register');
 
 Route::post('/looks' , 'search@agents');
@@ -31,7 +32,14 @@ Route::post('/looksagenthead', 'search@agenthead');
 
 Route::post('/looking' , 'search@members');
 
-Route::post('/reg', 'donate@donate');
+
+Route::post('/registeragent', 'forms@register');
+
+Route::post('/looks' , 'search@agents');
+
+Route::post('/looking' , 'search@members');
+
+Route::post('/register', 'forms@register');
 
 Route::post('/donate', 'search@donation');
 
@@ -61,7 +69,7 @@ Route::get('/ahead', 'PageController@ahead');
 Route::get('/agent', 'PageController@agent');
 
 
-
 Route::get('/graph', function () {
     return view('Graphs');
 });
+
