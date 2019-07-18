@@ -35,7 +35,14 @@
                                         <th>Telephone Number</th>
                                         <th>Email of wellwisher</th>
                                         <th>Amount Registered</th>
+
                                         <th>Actions</th>
+
+
+                                        <th>Date</th>
+
+
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -53,6 +60,9 @@
                                                 <a href=""><span class="ti-pencil"></span></a>
                                                 <a href=""><span class="ti-trash"></span></a>
                                             </td>
+
+                                        <td>{{ $donor->date}}</td>
+
 
                                     </tr>
                                         @endforeach

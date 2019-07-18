@@ -18,7 +18,11 @@ class CreateMembersTable extends Migration
             $table->string('name');
             $table->char('gender',1);
             $table->string('district');
+
+            $table->date('date_of_enrollment');
+
             $table->timestamp('date_of_enrollment');
+
             $table->string('enrolled_by');
             $table->string('recommender');
             $table->timestamps();

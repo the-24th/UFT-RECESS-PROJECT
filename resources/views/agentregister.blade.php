@@ -8,10 +8,12 @@
 <div class="card" align="center">
 
 
+
 <div class="card">
         <div class="card-header"><strong>AGENT REGISTRATION FORM</strong></div>
         <div class="card-body card-block">
             <form method="post" action="/registeragent">
+
 
 
 
@@ -23,6 +25,10 @@
                         <div class="row form-group">
                                 <div class="col-8">
                                     <div class="form-group"><label for="postal-code" class=" form-control-label"></label><input name="district" type="text" id="" placeholder="District Name" required class="form-control"></div>
+<<<<<<< HEAD
+                                    <div class="form-group"><label for="date" class=" form-control-label"></label><input name="date" type="text" id="" placeholder="Date" required class="form-control"></div>
+=======
+>>>>>>> 831b0250510d7addd6cd0b3813da82925e9856b3
 
 
                                     <div class='form-group'>

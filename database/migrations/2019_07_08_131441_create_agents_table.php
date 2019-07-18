@@ -19,7 +19,11 @@ class CreateAgentsTable extends Migration
             $table->string('lname');
             $table->string('number');
             $table->string('district');
-            $table->timestamp('date');
+
+            $table->date('date');
+
+           
+
             $table->string('sex');
             $table->string('signature');
 

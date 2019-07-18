@@ -21,9 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//
 
-Route::post('/reg','donate@donate');
+Route::post('/reg', 'donate@donate');
+
 
 Route::post('/registeragent', 'forms@register');
 
@@ -35,7 +35,9 @@ Route::post('/looking' , 'search@members');
 
 Route::get('/pay', 'PageController@pays');
 
+
 Route::get('/but','payment@pays');
+
 
 Route::post('/donate', 'search@donation');
 

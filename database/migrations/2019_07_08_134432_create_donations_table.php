@@ -20,6 +20,9 @@ class CreateDonationsTable extends Migration
             $table->string('Telephone_number');
             $table->string('email');
             $table->integer('amount');
+
+            $table->date('date');
+
             $table->timestamps();
         });
     }
