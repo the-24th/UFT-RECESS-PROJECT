@@ -35,7 +35,9 @@
                                         <th>Telephone Number</th>
                                         <th>Email of wellwisher</th>
                                         <th>Amount Registered</th>
+
                                         <th>Date</th>
+
 
                                     </tr>
                                 </thead>
@@ -49,7 +51,9 @@
                                         <td>{{ $donor->Telephone_number}}</td>
                                         <td>{{ $donor->email}}</td>
                                         <td>{{ $donor->amount}}</td>
+
                                         <td>{{ $donor->date}}</td>
+
 
                                     </tr>
                                         @endforeach

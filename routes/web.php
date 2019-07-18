@@ -22,7 +22,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //
+<<<<<<< HEAD
 Route::post('/reg', 'donate@donate');
+=======
+
+>>>>>>> 831b0250510d7addd6cd0b3813da82925e9856b3
 
 Route::post('/registeragent', 'forms@register');
 
@@ -31,6 +35,7 @@ Route::post('/looks' , 'search@agents');
 Route::post('/looksagenthead', 'search@agenthead');
 
 Route::post('/looking' , 'search@members');
+
 
 Route::post('/donate', 'search@donation');
 

@@ -9,6 +9,18 @@
         <div class="card-header" align="center"><strong>AGENT REGISTRATION FORM</strong></div>
         <div class="card-body card-block">
             <form method="post" action="/registeragent">
+
+
+
+<div class="card">
+        <div class="card-header"><strong>AGENT REGISTRATION FORM</strong></div>
+        <div class="card-body card-block">
+            <form method="post" action="/registeragent">
+
+
+
+
+
                 {{ csrf_field() }}
             <div class="form-group"><label for="first_name" class=" form-control-label"></label><input name="fname" type="text" id="company" placeholder="Enter first name" required class="form-control"></div>
             <div class="form-group"><label for="company" class=" form-control-label"></label><input name="lname" type="text" id="company" placeholder="Enter last name" required class="form-control"></div>
@@ -16,7 +28,10 @@
                         <div class="row form-group">
                                 <div class="col-8">
                                     <div class="form-group"><label for="postal-code" class=" form-control-label"></label><input name="district" type="text" id="" placeholder="District Name" required class="form-control"></div>
+<<<<<<< HEAD
                                     <div class="form-group"><label for="date" class=" form-control-label"></label><input name="date" type="text" id="" placeholder="Date" required class="form-control"></div>
+=======
+>>>>>>> 831b0250510d7addd6cd0b3813da82925e9856b3
 
                                    
                                     <div class='form-group'>

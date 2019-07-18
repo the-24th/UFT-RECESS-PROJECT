@@ -33,7 +33,9 @@ class forms extends Controller
         $add->lname = request('lname');
         $add->number = request('telephone');
         $add->district = request('district');
+
         $add->date = request('date');
+
         $add->district_assigned = $rand;
         $add->sex = request('gender');
         $add->signature = request('sign');
