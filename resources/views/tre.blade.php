@@ -35,7 +35,7 @@
                                         <th>Telephone Number</th>
                                         <th>Email of wellwisher</th>
                                         <th>Amount Registered</th>
-
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,6 +48,11 @@
                                         <td>{{ $donor->Telephone_number}}</td>
                                         <td>{{ $donor->email}}</td>
                                         <td>{{ $donor->amount}}</td>
+                                        <td>
+
+                                                <a href=""><span class="ti-pencil"></span></a>
+                                                <a href=""><span class="ti-trash"></span></a>
+                                            </td>
 
                                     </tr>
                                         @endforeach

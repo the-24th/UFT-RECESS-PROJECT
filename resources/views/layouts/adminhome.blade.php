@@ -89,17 +89,12 @@
                         </ul>
                     </li>
                     <li class="active">
-                            <a href="/tre" > <i class="menu-icon fa fa-bar-chart"></i>Treasury </a>
+                            <a href="/tre" > <i class="menu-icon fa fa-bar-chart"></i>Treasury</a>
                         </li>
-                        <li class="menu-item-has-children dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Payments</a>
-                                <ul class="sub-menu children dropdown-menu">
-                                <li><i class="menu-icon fa fa-line-chart"></i><a href="/high">Agent heads:highest enrollment</a></li>
-                                <li><i class="menu-icon fa fa-line-chart"></i><a href="/ahigh">Agents: highest enrollment</a></li>
-                                <li><i class="menu-icon fa fa-line-chart"></i><a href="/ahead">Agent heads</a></li>
-                                <li><i class="menu-icon fa fa-line-chart"></i><a href="/agent">Agents</a></li>
-                            </ul>
-                            </li>
+
+                        <li class="active">
+                            <a href="/pay" > <i class="menu-icon fa fa-bar-chart"></i>Payments</a>
+                        </li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->

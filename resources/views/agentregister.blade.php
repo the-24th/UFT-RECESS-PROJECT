@@ -6,9 +6,6 @@
 
 
 <div class="card" align="center">
-        <div class="card-header" align="center"><strong>AGENT REGISTRATION FORM</strong></div>
-        <div class="card-body card-block">
-            <form method="post" action="/registeragent">
 
 
 <div class="card">
@@ -27,7 +24,7 @@
                                 <div class="col-8">
                                     <div class="form-group"><label for="postal-code" class=" form-control-label"></label><input name="district" type="text" id="" placeholder="District Name" required class="form-control"></div>
 
-                                   
+
                                     <div class='form-group'>
                                         <select name="gender" style="background-color:white;border-radius:10px;padding:10px;">
                                             <option selected>Select Gender</option>

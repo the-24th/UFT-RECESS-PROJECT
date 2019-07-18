@@ -12,7 +12,7 @@ class PageController extends Controller
     }
 
     public function list(){
-        
+
         $adds = DB::select('select * from agents');
         return view('agentslist', compact('adds'));
     }
@@ -62,6 +62,11 @@ class PageController extends Controller
         return view('normal');
     }
 
+    public function pays(){
+        $high = DB::select('select * from highest_enrollment_districts');
+        $normal = DB::select('select * from district_pay');
+        return view('pay')->with('high',$high)->with('normal',$normal);
+    }
 
     public function money(){
         $donors = DB::select('select * from donations');

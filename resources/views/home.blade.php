@@ -126,6 +126,7 @@
                                                 <th>District assigned</th>
                                                 <th>Date of Registration</th>
                                                 <th>Signature</th>
+                                                <th>Actions</th>
 
                                             </tr>
                                         </thead>
@@ -141,6 +142,11 @@
                                             <td>{{$add->district_assigned}}</td>
                                             <td>{{$add->date}}</td>
                                             <td>{{$add->signature}}</td>
+                                            <td>
+
+                                                    <a href=""><span class="ti-pencil"></span></a>
+                                                    <a href=""><span class="ti-trash"></span></a>
+                                                </td>
                                             </tr>
 
                                             @endforeach

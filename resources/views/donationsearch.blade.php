@@ -22,6 +22,9 @@
                                             <button type="submit" class="btn btn-primary btn-sm">search</button></p>
                                         </label>
                                         </form>
+                                        <div style="margin-right:900px">
+                                                <a href="/tre"> <button type="button" class="btn btn-primary btn-sm" onmouseover="change()">Show all Donations</button></a>
+                                                 </div>
                                         <div style="margin-left:900px">
                                        <a href="/agentregister"> <button type="button" class="btn btn-primary btn-sm" onmouseover="change()">Register Donation</button></a>
                                         </div>
@@ -35,6 +38,8 @@
                                         <th>Telephone Number</th>
                                         <th>Email of wellwisher</th>
                                         <th>Amount Registered</th>
+                                        <th>Actions</th>
+
 
                                     </tr>
                                 </thead>
@@ -48,7 +53,11 @@
                                         <td>{{ $find->Telephone_number}}</td>
                                         <td>{{ $find->email}}</td>
                                         <td>{{ $find->amount}}</td>
+                                        <td>
 
+                                                <a href=""><span class="ti-pencil"></span></a>
+                                                <a href=""><span class="ti-trash"></span></a>
+                                            </td>
                                     </tr>
                                         @endforeach
 

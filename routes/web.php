@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //
 
+Route::post('/reg','donate@donate');
 
 Route::post('/registeragent', 'forms@register');
 
@@ -32,14 +33,9 @@ Route::post('/looksagenthead', 'search@agenthead');
 
 Route::post('/looking' , 'search@members');
 
+Route::get('/pay', 'PageController@pays');
 
-Route::post('/registeragent', 'forms@register');
-
-Route::post('/looks' , 'search@agents');
-
-Route::post('/looking' , 'search@members');
-
-Route::post('/register', 'forms@register');
+Route::get('/but','payment@pays');
 
 Route::post('/donate', 'search@donation');
 

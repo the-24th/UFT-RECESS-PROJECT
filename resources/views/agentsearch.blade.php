@@ -20,6 +20,9 @@
                                         <button type="submit" class="btn btn-primary btn-sm">search</button></p>
                                     </label>
                                     </form>
+                                    <div style="margin-right:900px">
+                                            <a href="/agentslist"> <button type="button" class="btn btn-primary btn-sm" onmouseover="change()">Show all Agents</button></a>
+                                             </div>
                                     <div style="margin-left:900px">
                                    <a href="/agentregister"> <button type="button" class="btn btn-primary btn-sm">Add Agent</button></a>
                                     </div>
@@ -38,6 +41,8 @@
                                         <th>District assigned</th>
                                         <th>Date of Registration</th>
                                         <th>Signature</th>
+                                        <th>Actions</th>
+
 
                                     </tr>
                                 </thead>
@@ -53,6 +58,11 @@
                                     <td>{{$find->district_assigned}}</td>
                                     <td>{{$find->date}}</td>
                                     <td>{{$find->signature}}</td>
+                                    <td>
+
+                                            <a href=""><span class="ti-pencil"></span></a>
+                                            <a href=""><span class="ti-trash"></span></a>
+                                        </td>
                                     </tr>
 
                                     @endforeach

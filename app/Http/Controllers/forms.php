@@ -17,7 +17,7 @@ class forms extends Controller
     {
 
        $conn = mysqli_connect('localhost','root','','recess');
-        $sql = "SELECT name from districts where Number_of_agents < 50";
+        $sql = "SELECT name from districts where Number_of_agents < 10";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_array($result)){
             $arr[$row["name"]]=$row;
@@ -38,17 +38,7 @@ class forms extends Controller
         $add->signature = request('sign');
         $add->save();
 
-
-
-
-       
-
         return redirect('agentslist')->with('success', 'DATA ADDED');
-
-
-
-        
-
 
     }
 
