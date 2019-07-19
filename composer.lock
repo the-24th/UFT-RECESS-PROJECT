@@ -467,6 +467,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v5.8.29",
             "source": {
                 "type": "git",
@@ -477,6 +478,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/489ae2218c7eb138caac780de584d8df9fe8160b",
                 "reference": "489ae2218c7eb138caac780de584d8df9fe8160b",
+=======
+            "version": "v5.8.27",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "f1dccffb96f614895393e27e4667105a05407af5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f1dccffb96f614895393e27e4667105a05407af5",
+                "reference": "f1dccffb96f614895393e27e4667105a05407af5",
+
                 "shasum": ""
             },
             "require": {
@@ -610,7 +623,11 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-07-16T14:05:28+00:00"
+
+          
+
+            "time": "2019-07-02T13:43:47+00:00"
+
         },
         {
             "name": "laravel/tinker",
@@ -839,6 +856,7 @@
         },
         {
             "name": "nesbot/carbon",
+<<<<<<< HEAD
             "version": "2.21.2",
             "source": {
                 "type": "git",
@@ -849,6 +867,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/a8bfb6631e3bc982427406d13ad817fc45d47b61",
                 "reference": "a8bfb6631e3bc982427406d13ad817fc45d47b61",
+=======
+            "version": "2.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "bc671b896c276795fad8426b0aa24e8ade0f2498"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bc671b896c276795fad8426b0aa24e8ade0f2498",
+                "reference": "bc671b896c276795fad8426b0aa24e8ade0f2498",
+>>>>>>> e79929802b0be1cbada010a30de818016791f58d
                 "shasum": ""
             },
             "require": {
@@ -864,9 +894,12 @@
                 "phpunit/phpunit": "^7.5 || ^8.0",
                 "squizlabs/php_codesniffer": "^3.4"
             },
+<<<<<<< HEAD
             "bin": [
                 "bin/carbon"
             ],
+=======
+>>>>>>> e79929802b0be1cbada010a30de818016791f58d
             "type": "library",
             "extra": {
                 "laravel": {
@@ -889,10 +922,13 @@
                     "name": "Brian Nesbitt",
                     "email": "brian@nesbot.com",
                     "homepage": "http://nesbot.com"
+<<<<<<< HEAD
                 },
                 {
                     "name": "kylekatarnls",
                     "homepage": "http://github.com/kylekatarnls"
+=======
+>>>>>>> e79929802b0be1cbada010a30de818016791f58d
                 }
             ],
             "description": "A simple API extension for DateTime.",
@@ -902,7 +938,11 @@
                 "datetime",
                 "time"
             ],
+<<<<<<< HEAD
             "time": "2019-07-17T07:49:05+00:00"
+=======
+            "time": "2019-06-25T10:00:57+00:00"
+>>>>>>> e79929802b0be1cbada010a30de818016791f58d
         },
         {
             "name": "nikic/php-parser",
@@ -957,6 +997,7 @@
         },
         {
             "name": "opis/closure",
+<<<<<<< HEAD
             "version": "3.3.1",
             "source": {
                 "type": "git",
@@ -967,6 +1008,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/opis/closure/zipball/92927e26d7fc3f271efe1f55bdbb073fbb2f0722",
                 "reference": "92927e26d7fc3f271efe1f55bdbb073fbb2f0722",
+=======
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opis/closure.git",
+                "reference": "f846725591203098246276b2e7b9e8b7814c4965"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opis/closure/zipball/f846725591203098246276b2e7b9e8b7814c4965",
+                "reference": "f846725591203098246276b2e7b9e8b7814c4965",
+>>>>>>> e79929802b0be1cbada010a30de818016791f58d
                 "shasum": ""
             },
             "require": {
@@ -1014,7 +1067,11 @@
                 "serialization",
                 "serialize"
             ],
+<<<<<<< HEAD
             "time": "2019-07-09T21:58:11+00:00"
+=======
+            "time": "2019-05-31T20:04:32+00:00"
+>>>>>>> e79929802b0be1cbada010a30de818016791f58d
         },
         {
             "name": "paragonie/random_compat",
@@ -3859,6 +3916,7 @@
         },
         {
             "name": "phpunit/php-token-stream",
+<<<<<<< HEAD
             "version": "3.0.2",
             "source": {
                 "type": "git",
@@ -3869,6 +3927,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/c4a66b97f040e3e20b3aa2a243230a1c3a9f7c8c",
                 "reference": "c4a66b97f040e3e20b3aa2a243230a1c3a9f7c8c",
+=======
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-token-stream.git",
+                "reference": "c99e3be9d3e85f60646f152f9002d46ed7770d18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/c99e3be9d3e85f60646f152f9002d46ed7770d18",
+                "reference": "c99e3be9d3e85f60646f152f9002d46ed7770d18",
+>>>>>>> e79929802b0be1cbada010a30de818016791f58d
                 "shasum": ""
             },
             "require": {
@@ -3904,6 +3974,7 @@
             "keywords": [
                 "tokenizer"
             ],
+<<<<<<< HEAD
             "time": "2019-07-08T05:24:54+00:00"
         },
         {
@@ -3918,6 +3989,22 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2834789aeb9ac182ad69bfdf9ae91856a59945ff",
                 "reference": "2834789aeb9ac182ad69bfdf9ae91856a59945ff",
+=======
+            "time": "2018-10-30T05:52:18+00:00"
+        },
+        {
+            "name": "phpunit/phpunit",
+            "version": "7.5.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "b9278591caa8630127f96c63b598712b699e671c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b9278591caa8630127f96c63b598712b699e671c",
+                "reference": "b9278591caa8630127f96c63b598712b699e671c",
+>>>>>>> e79929802b0be1cbada010a30de818016791f58d
                 "shasum": ""
             },
             "require": {
@@ -3988,7 +4075,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
             "time": "2019-07-15T06:24:08+00:00"
+=======
+            "time": "2019-06-19T12:01:51+00:00"
+>>>>>>> e79929802b0be1cbada010a30de818016791f58d
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
