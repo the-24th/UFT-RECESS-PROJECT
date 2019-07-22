@@ -82,12 +82,18 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-line-chart"></i><a href="/funding">Funding</a></li>
+
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="/graph">Donations</a></li>
+
                             <li><i class="menu-icon fa fa-pie-chart"></i><a href="/enroll">Enrollment</a></li>
                         </ul>
                     </li>
                     <li class="active">
-                            <a href="/tre" > <i class="menu-icon fa fa-bar-chart"></i>Treasury </a>
+                            <a href="/tre" > <i class="menu-icon fa fa-bar-chart"></i>Treasury</a>
+                        </li>
+
+                        <li class="active">
+                            <a href="/pay" > <i class="menu-icon fa fa-bar-chart"></i>Payments</a>
                         </li>
 
                 </ul>
@@ -104,6 +110,7 @@
         <!-- Header-->
         <header id="header" class="">
 
+
                 <div id="app">
                         <nav class="navbar navbar-expand-md navbar-light">
                             <div class="container">
@@ -114,9 +121,7 @@
 
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <!-- Left Side Of Navbar -->
-                                    <ul class="navbar-nav mr-auto">
 
-                                    </ul>
 
                                     <!-- Right Side Of Navbar -->
                                     <ul class="navbar-nav ml-auto">
@@ -156,6 +161,7 @@
 
         </header><!-- /header -->
         <!-- Header-->
+
 
 
 

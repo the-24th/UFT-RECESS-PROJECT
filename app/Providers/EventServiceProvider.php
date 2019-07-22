@@ -9,6 +9,10 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 use App\Events;
 use App\Listeners;
 
+use App\Events;
+use App\Listeners;
+
+
 class EventServiceProvider extends ServiceProvider
 {
     /**
@@ -20,9 +24,17 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+
+
+
+
+
+
+
         agentBeingRegistered::class => [
             assignDistrictToRegisteredAgent::class,
         ],
+
 
     ];
 

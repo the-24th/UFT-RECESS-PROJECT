@@ -59,14 +59,19 @@
                                     <div class="input-group-addon">/=</div>
                                 </div>
                             </div>
+
+                             <div class="form-group"><label for="date" class=" form-control-label"></label><input name="date" type="text" id="" placeholder="Date" required class="form-control"></div>
+
                         </div>
 
                 </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-success btn-sm">
+                <div class="">
+
+                    <button type="submit" class="btn">
                         <i class="fa fa-dot-circle-o"></i> Submit
                     </button>
-                    <button type="reset" class="btn btn-danger btn-sm">
+                    <button type="reset" class="btn">
+
                         <i class="fa fa-ban"></i> Reset
                     </button>
                 </div>

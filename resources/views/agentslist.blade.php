@@ -20,7 +20,17 @@
                                         <button type="submit" class="btn btn-primary btn-sm">search</button></p>
                                     </label>
                                     </form>
+
                                 </div>
+
+
+                                    <div style="margin-left:900px">
+                                   <a href="/agentregister"> <button type="button" class="btn btn-primary btn-sm" onmouseover="change()">Add Agent</button></a>
+                                    </div>
+                                </div>
+
+
+
 
 
                             <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -30,6 +40,8 @@
                                         <th>First-name</th>
                                         <th>Last-name</th>
                                         <th>Gender</th>
+                                        <th>District</th>
+                                        <th>Phone Number</th>
                                         <th>District assigned</th>
                                         <th>Date of Registration</th>
                                         <th>Signature</th>
@@ -44,6 +56,7 @@
                                     <td>{{$add->fname}}</td>
                                     <td>{{$add->lname}}</td>
                                     <td>{{$add->sex}}</td>
+
                                     <td>{{$add->district_assigned}}</td>
                                     <td>{{$add->date}}</td>
                                     <td>{{$add->signature}}</td>
@@ -52,6 +65,19 @@
                                                     <a href=""><span class="ti-pencil"></span></a>
                                                     <a href=""><span class="ti-trash"></span></a>
                                                 </td>
+
+                                    <td>{{$add->district}}</td>
+                                    <td>{{$add->number}}</td>
+                                    <td>{{$add->district_assigned}}</td>
+
+                                    <td>{{$add->date}}</td>
+                                    <td>{{$add->signature}}</td>
+                                    <td>
+
+                                        <a href=""><span class="ti-pencil"></span></a>
+                                        <a href=""><span class="ti-trash"></span></a>
+                                    </td>
+
                                     </tr>
 
                                     @endforeach
@@ -64,6 +90,6 @@
 
             </div>
         </div><!-- .animated -->
-    </div><!-- .content -->
+     </div><!-- .content -->
 
 @endsection

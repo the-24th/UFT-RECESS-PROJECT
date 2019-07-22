@@ -15,7 +15,9 @@
                             <strong class="card-title">List of Members</strong>
                         </div>
                         <div class="card-body">
+
                                 <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
+
                                         <form method="post" action="/looking">
                                             {{csrf_field()}}
                                         <label>Search:
@@ -24,6 +26,7 @@
                                         </label>
                                         </form>
                                     </div>
+
                             <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
@@ -34,6 +37,7 @@
                                         <th>Date of Enrollment</th>
                                         <th>Enrolled By</th>
                                         <th>Recommender</th>
+                                        <th>Actions</th>
 
                                     </tr>
                                 </thead>
@@ -48,7 +52,11 @@
                                         <td>{{$mem->date_of_enrollment}}</td>
                                         <td>{{$mem->enrolled_by}}</td>
                                         <td>{{$mem->recommender}}</td>
+                                        <td>
 
+                                                <a href=""><span class="ti-pencil"></span></a>
+                                                <a href=""><span class="ti-trash"></span></a>
+                                            </td>
 
                                     </tr>
                                     @endforeach

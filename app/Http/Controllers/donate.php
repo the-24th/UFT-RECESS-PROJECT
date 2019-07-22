@@ -15,8 +15,16 @@ class donate extends Controller
         $donor->Telephone_number = request('number');
         $donor->email = request('email');
         $donor->amount = request('amount');
+
+        $donor->date = request('date');
+
         $donor->save();
+
         return redirect('tre')->with('success', 'DATA ADDED');
+
+
+
+        
     }
 
 }

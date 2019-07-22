@@ -10,6 +10,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+
+
     public function roles()
     {
         return $this
@@ -46,6 +48,7 @@ public function hasRole($role)
   }
   return false;
 }
+
 
     /**
      * The attributes that are mass assignable.
