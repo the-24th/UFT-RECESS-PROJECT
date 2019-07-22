@@ -23,10 +23,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+Route::resource('agentslist', 'PageController');
 
 Route::post('/reg', 'donate@donate');
 
+Route::get('/delete/{agentid}', 'PageController@delete');
 
 Route::post('/registeragent', 'forms@register');
 
@@ -38,9 +39,7 @@ Route::post('/looking' , 'search@members');
 
 Route::get('/pay', 'PageController@pays');
 
-
 Route::get('/but','payment@pays');
-
 
 Route::post('/donate', 'search@donation');
 

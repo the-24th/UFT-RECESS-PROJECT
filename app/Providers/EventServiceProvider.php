@@ -9,8 +9,7 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 use App\Events;
 use App\Listeners;
 
-use App\Events;
-use App\Listeners;
+
 
 
 class EventServiceProvider extends ServiceProvider

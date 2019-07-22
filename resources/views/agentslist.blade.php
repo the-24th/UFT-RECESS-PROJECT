@@ -57,25 +57,19 @@
                                     <td>{{$add->lname}}</td>
                                     <td>{{$add->sex}}</td>
 
-                                    <td>{{$add->district_assigned}}</td>
-                                    <td>{{$add->date}}</td>
-                                    <td>{{$add->signature}}</td>
-                                     <td>
-
-                                                    <a href=""><span class="ti-pencil"></span></a>
-                                                    <a href=""><span class="ti-trash"></span></a>
-                                                </td>
-
                                     <td>{{$add->district}}</td>
                                     <td>{{$add->number}}</td>
                                     <td>{{$add->district_assigned}}</td>
-
                                     <td>{{$add->date}}</td>
                                     <td>{{$add->signature}}</td>
+                                
+
+                                    
+                                  
                                     <td>
 
-                                        <a href=""><span class="ti-pencil"></span></a>
-                                        <a href=""><span class="ti-trash"></span></a>
+                                        <a href="{{action('PageController@edit', $add->agentid)}}"><span class="ti-pencil"></span></a>
+                                        <a href="/delete/{{$add->agentid}}"><span class="ti-trash"></span></a>
                                     </td>
 
                                     </tr>
