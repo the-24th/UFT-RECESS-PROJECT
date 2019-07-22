@@ -16,8 +16,7 @@
                         </div>
                         <div class="card-body">
 
-
-                              <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
+                                <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
 
                                         <form method="post" action="/looking">
                                             {{csrf_field()}}

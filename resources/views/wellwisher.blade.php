@@ -25,7 +25,11 @@
                                     </form>
                                <a href="/donation"><button type="submit" class="btn btn-primary btn-sm">Back</button></a>
                                 </div>
-	<h2 align="center"><u>BAR GRAPH SHOWING DONATIONS.</u></h2>
+	<h2 align="center"><u>BAR GRAPH SHOWING DONATIONS.</u> <br>
+    @php
+      echo $outs;
+    @endphp
+  </h2>
    <br /><br />
    <div id="chart"></div>
 		
@@ -39,7 +43,7 @@
 Morris.Bar({
  element : 'chart',
  data:[<?php echo $chart_data; ?>],
- xkey:'name',
+ xkey:'monthname',
  ykeys:['amount'],
  labels:['Amount'],
  hideHover:'auto',

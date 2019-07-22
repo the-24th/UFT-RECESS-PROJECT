@@ -20,6 +20,10 @@
                                         <button type="submit" class="btn btn-primary btn-sm">search</button></p>
                                     </label>
                                     </form>
+
+                                </div>
+
+
                                     <div style="margin-left:900px">
                                    <a href="/agentregister"> <button type="button" class="btn btn-primary btn-sm" onmouseover="change()">Add Agent</button></a>
                                     </div>
@@ -52,17 +56,26 @@
                                     <td>{{$add->fname}}</td>
                                     <td>{{$add->lname}}</td>
                                     <td>{{$add->sex}}</td>
-                                    <td  id="less" contenteditable="false">{{$add->district}}</td>
+
+
+                                    <td>{{$add->district}}</td>
+
                                     <td>{{$add->number}}</td>
                                     <td>{{$add->district_assigned}}</td>
-
                                     <td>{{$add->date}}</td>
                                     <td>{{$add->signature}}</td>
+                                
+
+                                    
+                                  
                                     <td>
 
-                                        <a href="" onclick="change();"><span class="ti-pencil"></span></a>
-                                        <a href=""><span class="ti-trash"></span></a>
+
+                                        <a href="{{action('PageController@edit', $add->agentid)}}"><span class="ti-pencil"></span></a>
+                                        <a href="/delete/{{$add->agentid}}"><span class="ti-trash"></span></a>
+
                                     </td>
+
                                     </tr>
 
                                     @endforeach

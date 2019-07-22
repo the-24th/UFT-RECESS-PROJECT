@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\agenthead;
 use DB;
 
 class HomeController extends Controller
@@ -22,6 +23,30 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+       public function edit1($agentid)
+    {
+        $agent = agent::find($agentid);
+        return view('layouts.agentedit1', compact('agent', 'agentid'));
+    }
+
+        public function update1(Request $request, $agentid)
+    {
+       $agent = agent::find($agentid);
+
+
+       $agent->fname = $request->get('fname');
+        $agent->lname = $request->get('lname');
+        $agent->number = $request->get('telephone');
+        $agent->district = $request->get('district');
+        $agent->date = $request->get('date');
+        $agent->district_assigned = $request->get('district_assigned');
+        $agent->sex = $request->get('gender');
+        $agent->signature = $request->get('sign');
+        $agent->save();
+        return redirect('home')->with('success', 'Data Updated');
+    }
+
     public function index()
     {
         $conn = mysqli_connect('localhost','root','','recess');

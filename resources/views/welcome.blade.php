@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
         <title>UFT</title>
+
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
 
 
 
@@ -24,6 +27,7 @@
                 font-weight: 400;
                 height: 100vh;
                 margin: 0;
+
 
             }
 
@@ -49,12 +53,19 @@
 
             .content {
                 text-align: center;
+
+            }
+
+            .title {
+                font-size: 84px;
+
                 margin-left:800px;
             }
 
             .title {
                 font-size: 200px;
                 font-weight:bold;
+
 
             }
 
@@ -80,22 +91,26 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}"><b><u>Login</u></b></a>
+
+                        <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}"><b><u>Register</u></b></a>
+
                         @endif
                     @endauth
                 </div>
-            @endif
+           @endif
 
             <div class="content">
                 <div class="title m-b-md">
+
                     UFT
                 </div>
 
                 <div class="links">
                     <p><b>UNITED FRONT FOR TRANSFORMATION POLITICAL PARTY</b></p>
+
                 </div>
             </div>
         </div>

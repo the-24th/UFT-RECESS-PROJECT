@@ -16,7 +16,9 @@
                     <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
                     <div class="stat-content dib">
                         <div class="stat-text"><b>In Treasury</b></div>
+
                         <div class="stat-digit" style="font-size:20px">
+
                             @php
                             echo $data1['dimes']."/=";
 
@@ -52,8 +54,12 @@
                 <div class="stat-widget-one">
                     <div class="stat-icon dib"><i class="ti-settings text-warning border-warning"></i></div>
                     <div class="stat-content dib">
+
+
                         <div class="stat-text"><b>Upgrades</b></div>
-                        <div>770</div>
+
+                        <div class="stat-digit">770</div>
+
                     </div>
                 </div>
             </div>

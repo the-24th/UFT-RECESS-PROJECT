@@ -26,6 +26,10 @@ class EventServiceProvider extends ServiceProvider
 
 
 
+
+
+
+
         agentBeingRegistered::class => [
             assignDistrictToRegisteredAgent::class,
         ],
