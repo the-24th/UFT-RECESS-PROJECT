@@ -52,7 +52,7 @@
                                     <td>{{$add->fname}}</td>
                                     <td>{{$add->lname}}</td>
                                     <td>{{$add->sex}}</td>
-                                    <td>{{$add->district}}</td>
+                                    <td  id="less" contenteditable="false">{{$add->district}}</td>
                                     <td>{{$add->number}}</td>
                                     <td>{{$add->district_assigned}}</td>
 
@@ -60,7 +60,7 @@
                                     <td>{{$add->signature}}</td>
                                     <td>
 
-                                        <a href=""><span class="ti-pencil"></span></a>
+                                        <a href="" onclick="change();"><span class="ti-pencil"></span></a>
                                         <a href=""><span class="ti-trash"></span></a>
                                     </td>
                                     </tr>
@@ -76,5 +76,10 @@
             </div>
         </div><!-- .animated -->
      </div><!-- .content -->
+<script>
 
+    function change(){
+    var edit=document.getElementById('less').contentEditable="true";
+    }
+    </script>
 @endsection

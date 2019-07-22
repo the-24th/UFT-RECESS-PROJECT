@@ -35,9 +35,11 @@ Route::post('/looking' , 'search@members');
 
 Route::get('/pay', 'PageController@pays');
 
+Route::get('/edit','PageController@change');
 
 Route::get('/but','payment@pays');
 
+Route::get('/agenthead', 'PageController@head');
 
 Route::post('/donate', 'search@donation');
 
@@ -61,10 +63,7 @@ Route::get('/moneyregister', 'PageController@mon');
 
 Route::get('/upgrade', 'PageController@up');
 
-Route::get('/high', 'PageController@high');
-Route::get('/ahigh', 'PageController@ahigh');
-Route::get('/ahead', 'PageController@ahead');
-Route::get('/agent', 'PageController@agent');
+
 
 
 Route::get('/graph', function () {

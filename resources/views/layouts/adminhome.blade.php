@@ -49,29 +49,30 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="/home"> <i class="menu-icon fa fa-dashboard"></i>Home </a>
+                        <a href="/home"> <i class="menu-icon ti-world"></i>Home </a>
                     </li>
                     <!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Registration</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="/agentregister">Register Agent</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="/moneyregister">Register Money</a></li>
+                            <li><i class="ti-plus"></i><a href="/agentregister">Register Agent</a></li>
+                            <li><i class="ti-server"></i><a href="/moneyregister">Register Money</a></li>
 
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Agents</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-user"></i>Agents</a>
                         <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-line-chart"></i><a href="/agentslist">List of Agents</a></li>
-                        <li><i class="menu-icon fa fa-line-chart"></i><a href="/archy">District Hierarchy</a></li>
+                        <li><i class="menu-icon ti-menu"></i><a href="/agentslist">List of Agents</a></li>
+                        <li><i class="menu-icon ti-exchange-vertical"></i><a href="/archy">District Hierarchy</a></li>
+                        <li><i class="menu-icon ti-menu"></i><a href="/agenthead">List of AgentHeads</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Members</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-id-badge"></i>Members</a>
                         <ul class="sub-menu children dropdown-menu">
-                                <li><i class="menu-icon fa fa-line-chart"></i><a href="/members">List of Members</a></li>
-                                <li><i class="menu-icon fa fa-line-chart"></i><a href="/upgrade">Recommended for Upgrade</a></li>
+                                <li><i class="menu-icon ti-list-ol"></i><a href="/members">List of Members</a></li>
+                                <li><i class="menu-icon ti-export"></i><a href="/upgrade">Recommended for Upgrade</a></li>
 
                         </ul>
 
@@ -81,19 +82,19 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="/funding">Funding</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="/funding">Funding</a></li>
 
-               <li><i class="menu-icon fa fa-area-chart"></i><a href="/donation">Donations</a></li>
+               <li><i class="menu-icon ti-money"></i><a href="/donation">Donations</a></li>
 
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="/enroll">Enrollment</a></li>
+                            <li><i class="menu-icon ti-slice"></i><a href="/enroll">Enrollment</a></li>
                         </ul>
                     </li>
                     <li class="active">
-                            <a href="/tre" > <i class="menu-icon fa fa-bar-chart"></i>Treasury</a>
+                            <a href="/tre" > <i class="menu-icon ti-money"></i>Treasury</a>
                         </li>
 
                         <li class="active">
-                            <a href="/pay" > <i class="menu-icon fa fa-bar-chart"></i>Payments</a>
+                            <a href="/pay" > <i class="menu-icon ti-receipt"></i>Payments</a>
                         </li>
 
                 </ul>
@@ -108,11 +109,13 @@
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
-        <header id="header" class="">
+        <header id="header" class="" >
+
 
 
                 <div id="app">
-                        <nav class="navbar navbar-expand-md navbar-light">
+
+                        <nav class="navbar navbar-expand-md navbar-light"  >
                             <div class="container">
 
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -121,6 +124,41 @@
 
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <!-- Left Side Of Navbar -->
+                                    <div class="header-left">
+
+
+                                            <div class="dropdown for-notification">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" style="color:white; " id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-bell"></i>
+                                                    <span class="count bg-danger">5</span>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="notification">
+                                                    <p class="red">You have 3 Notification</p>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="dropdown for-message">
+                                                <a>
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"  style="color:white;" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="ti-email"></i>
+                                                    <span class="count bg-primary">9</span>
+                                                </button>
+                                            </a>
+                                                <div class="dropdown-menu" aria-labelledby="message">
+                                                    <p class="red">You have 4 Mails</p>
+
+                                                </div>
+                                            </div>
+
+                                            <button class="search-trigger"><i class="fa fa-search"></i></button>
+                                            <div class="form-inline">
+                                                <form class="search-form">
+                                                    <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                                                    <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
 
 
                                     <!-- Right Side Of Navbar -->
@@ -138,14 +176,13 @@
                                         @else
                                             <li class="nav-item dropdown">
                                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                                </a>
-
+                                                  logged in as:<p><span class="caret" style="color:greenyellow"></u> {{ Auth::user()->name }}</u> </span>
+                                                    <span class="ti-angle-double-down"></span> </p>
                                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                                    <a class="dropdown-item" style="color:red" href="{{ route('logout') }}"
                                                        onclick="event.preventDefault();
                                                                      document.getElementById('logout-form').submit();">
-                                                        {{ __('Logout') }}
+                                                        {{ __('Logout') }} <span class="ti-unlink"></span>
                                                     </a>
 
                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -165,7 +202,7 @@
 
 
 
-        <div class="content mt-3">
+        <div class="content mt-3" style="margin-top:2px">
             @include('flash-message')
             @yield('content')
 
@@ -178,7 +215,8 @@
     <script src="{{asset('vendors/popper.js/dist/umd/popper.min.js')}}"></script>
     <script src="{{asset('vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
-
+    <script type="text/javascript" src="{{asset('jquery-1.7.2.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('functions.js')}}"></script>
 
     <script src="{{asset('vendors/chart.js/dist/Chart.bundle.min.js')}}"></script>
     <script src="{{asset('assets/js/dashboard.js')}}"></script>

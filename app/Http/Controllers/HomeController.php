@@ -25,6 +25,9 @@ class HomeController extends Controller
     public function index()
     {
         $conn = mysqli_connect('localhost','root','','recess');
+
+
+
         $query1 = 'select sum(amount) as "dimes" from donations';
         $res1 = mysqli_query($conn, $query1);
         $data1 = mysqli_fetch_array($res1);
@@ -37,27 +40,10 @@ class HomeController extends Controller
         $res3 = mysqli_query($conn, $query3);
         $data3 = mysqli_fetch_array($res3);
 
-
-        $sql = "SELECT * from agents group by district_assigned";
-        $result = mysqli_query($conn, $sql);
-        while($rows = mysqli_fetch_array($result))
-        {
-	    $agentid = $rows['agentid'];
-	    $fname = $rows['fname'];
-	    $lname = $rows['lname'];
-	    $sex = $rows['sex'];
-	    $district = $rows['district'];
-	    $number = $rows['number'];
-	    $district_assigned = $rows['district_assigned'];
-	    $date = $rows['date'];
-	    $signature = $rows['signature'];
-			$work = "INSERT into agentheads(agentid, fname, lname, sex, district, number,  district_assigned, date, signature)
-            values('$agentid', '$fname', '$lname', '$sex', '$district', '$number', '$district_assigned', '$date', '$signature')";
-            mysqli_query($conn, $work);
-        }
+        $hero = DB::select('SELECT districts.name, districts.members_enrolled, districts.Number_of_agents,agentheads.fname, agentheads.lname from districts left join agentheads on districts.name=agentheads.district_assigned');
 
 
-        $adds = DB::select('select * from agentheads');
-        return view('home')->with('data1',$data1)->with('data2',$data2)->with('data3',$data3)->with('adds',$adds);
+
+        return view('home')->with('data1',$data1)->with('data2',$data2)->with('data3',$data3)->with('hero',$hero);
     }
 }

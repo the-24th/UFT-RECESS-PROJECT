@@ -25,6 +25,8 @@ class CreateDonationsTable extends Migration
 
             $table->timestamps();
         });
+
+
     }
 
     /**

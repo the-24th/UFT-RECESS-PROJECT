@@ -12,7 +12,7 @@
                             <div style="margin-left:900px">
                                     <a href="/but"> <button type="button" class="btn btn-primary btn-sm" onmouseover="change()">Make Payment</button></a>
                                      </div>
-                        <strong class="card-title">Payment distrbution</strong>
+                        <strong class="card-title">Payment distribution</strong>
                     </div>
                     <div class="card-body">
                             <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
@@ -42,19 +42,17 @@
 
 
                                         </tr>
-
+                                        @foreach($high as $hi)
+                                        @foreach($normal as $norm)
                                 <tr>
-                                    @foreach($high as $hi)
                                 <td>{{$hi->Agenthead_pay}}</td>
                                 <td>{{$hi->Agents_pay}}</td>
-                                    @endforeach
-                                    @foreach($normal as $norm)
                                 <td>{{$norm->Agenthead_pay}}</td>
                                 <td>{{$norm->Agents_pay}}</td>
                                 <td>{{$norm->Administrator_pay}}</td>
-                                    @endforeach
                                 </tr>
-
+                                @endforeach
+                                @endforeach
 
                             </tbody>
                         </table>

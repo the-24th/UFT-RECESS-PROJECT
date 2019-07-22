@@ -17,6 +17,11 @@ class PageController extends Controller
         return view('agentslist', compact('adds'));
     }
 
+    public function change(){
+        return view('edit');
+    }
+
+
     public function arch(){
         return view('archy');
     }
@@ -72,5 +77,33 @@ class PageController extends Controller
         $donors = DB::select('select * from donations');
         return view('tre', compact('donors'));
     }
+
+    public function head(){
+        $conn = mysqli_connect('localhost','root','','recess');
+
+        $sql = "SELECT * from agents group by district_assigned";
+        $result = mysqli_query($conn, $sql);
+        while($rows = mysqli_fetch_array($result))
+        {
+	    $agentid = $rows['agentid'];
+	    $fname = $rows['fname'];
+	    $lname = $rows['lname'];
+	    $sex = $rows['sex'];
+	    $district = $rows['district'];
+	    $number = $rows['number'];
+	    $district_assigned = $rows['district_assigned'];
+	    $date = $rows['date'];
+	    $signature = $rows['signature'];
+			$work = "INSERT into agentheads(agentid, fname, lname, sex, district, number,  district_assigned, date, signature)
+            values('$agentid', '$fname', '$lname', '$sex', '$district', '$number', '$district_assigned', '$date', '$signature')";
+            mysqli_query($conn, $work);
+        }
+
+
+        $adds = DB::select('select * from agentheads');
+        return view('agenthead')->with('adds',$adds);
+    }
+
+
 }
 

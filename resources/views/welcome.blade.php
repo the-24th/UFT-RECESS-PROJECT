@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
 
-        
+
         <!-- Styles -->
         <style>
             html, body {
@@ -24,7 +24,7 @@
                 font-weight: 400;
                 height: 100vh;
                 margin: 0;
-                
+
             }
 
             .full-height {
@@ -55,7 +55,7 @@
             .title {
                 font-size: 200px;
                 font-weight:bold;
-              
+
             }
 
             .links > a {
