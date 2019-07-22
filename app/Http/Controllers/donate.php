@@ -16,7 +16,7 @@ class donate extends Controller
         $donor->email = request('email');
         $donor->amount = request('amount');
         $donor->save();
-        return redirect('tre');
+        return redirect('tre')->with('success', 'DATA ADDED');
     }
 
 }

@@ -82,7 +82,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-line-chart"></i><a href="/funding">Funding</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="/donation">Donations</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="/graph">Donations</a></li>
                             <li><i class="menu-icon fa fa-pie-chart"></i><a href="/enroll">Enrollment</a></li>
                         </ul>
                     </li>

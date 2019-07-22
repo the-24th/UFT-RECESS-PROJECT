@@ -12,6 +12,7 @@ class PageController extends Controller
     }
 
     public function list(){
+        
         $adds = DB::select('select * from agents');
         return view('agentslist', compact('adds'));
     }

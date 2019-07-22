@@ -38,16 +38,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                        @foreach ($mems as $mem)
+                                        @foreach ($finds as $find)
                                     <tr>
 
-                                        <td>{{$mem->id}}</td>
-                                        <td>{{$mem->name}}</td>
-                                        <td>{{$mem->gender}}</td>
-                                        <td>{{$mem->district}}</td>
-                                        <td>{{$mem->date_of_enrollment}}</td>
-                                        <td>{{$mem->enrolled_by}}</td>
-                                        <td>{{$mem->recommender}}</td>
+                                        <td>{{$find->id}}</td>
+                                        <td>{{$find->name}}</td>
+                                        <td>{{$find->gender}}</td>
+                                        <td>{{$find->district}}</td>
+                                        <td>{{$find->date_of_enrollment}}</td>
+                                        <td>{{$find->enrolled_by}}</td>
+                                        <td>{{$find->recommender}}</td>
 
 
                                     </tr>
