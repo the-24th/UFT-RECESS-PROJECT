@@ -23,9 +23,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('agentslist', 'PageController');
 
 Route::post('/reg', 'donate@donate');
 
+Route::get('/delete/{agentid}', 'PageController@delete');
 
 Route::post('/registeragent', 'forms@register');
 
@@ -36,6 +38,13 @@ Route::post('/looksagenthead', 'search@agenthead');
 Route::post('/looking' , 'search@members');
 
 Route::get('/pay', 'PageController@pays');
+
+
+Route::get('/edit','PageController@change');
+
+Route::get('/but','payment@pays');
+
+Route::get('/agenthead', 'PageController@head');
 
 
 Route::get('/but','payment@pays');
@@ -67,10 +76,7 @@ Route::get('/moneyregister', 'PageController@mon');
 
 Route::get('/upgrade', 'PageController@up');
 
-Route::get('/high', 'PageController@high');
-Route::get('/ahigh', 'PageController@ahigh');
-Route::get('/ahead', 'PageController@ahead');
-Route::get('/agent', 'PageController@agent');
+
 
 
 Route::get('/bar', function () {
@@ -81,3 +87,7 @@ Route::get('/graph', function () {
     return view('Graphs');
 });
 
+
+Route::get('/graph', function () {
+    return view('Graphs');
+});

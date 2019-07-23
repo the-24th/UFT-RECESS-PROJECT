@@ -23,9 +23,11 @@
                                             <button type="submit" class="btn btn-primary btn-sm">search</button></p>
                                         </label>
                                         </form>
+
                                         <div style="margin-left:900px">
                                                 <a href="/members"> <button type="button" class="btn btn-primary btn-sm" onmouseover="change()">Show all Members</button></a>
                                                  </div>
+
                                     </div>
                             <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                 <thead>
@@ -37,7 +39,9 @@
                                         <th>Date of Enrollment</th>
                                         <th>Enrolled By</th>
                                         <th>Recommender</th>
+
                                         <th>Actions</th>
+
 
                                     </tr>
                                 </thead>
@@ -52,11 +56,13 @@
                                         <td>{{$find->date_of_enrollment}}</td>
                                         <td>{{$find->enrolled_by}}</td>
                                         <td>{{$find->recommender}}</td>
+
                                         <td>
 
                                                 <a href=""><span class="ti-pencil"></span></a>
                                                 <a href=""><span class="ti-trash"></span></a>
                                             </td>
+
 
                                     </tr>
                                     @endforeach

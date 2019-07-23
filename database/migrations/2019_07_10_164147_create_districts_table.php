@@ -21,6 +21,9 @@ class CreateDistrictsTable extends Migration
             $table->string('District_initials');
             $table->timestamps();
         });
+
+        DB::table('districts')->insert([ ['name' => 'Kampala', 'members_enrolled' => 0,'Number_of_agents' =>0,'District_initials'=>'KLA'], ['name' => 'Kasese', 'members_enrolled' => 0,'Number_of_agents' =>0,'District_initials'=>'KAS'],  ['name' => 'Kitgum', 'members_enrolled' => 0,'Number_of_agents' =>0,'District_initials'=>'KIT'],  ['name' => 'Mbarara', 'members_enrolled' => 0,'Number_of_agents' =>0,'District_initials'=>'MBRA'],  ['name' => 'Gulu', 'members_enrolled' => 0,'Number_of_agents' =>0,'District_initials'=>'GUL'],  ['name' => 'Bushenyi', 'members_enrolled' => 0,'Number_of_agents' =>0,'District_initials'=>'BSH'],  ['name' => 'Koboko', 'members_enrolled' => 0,'Number_of_agents' =>0,'District_initials'=>'KOB'], ['name' => 'Mbale', 'members_enrolled' => 0,'Number_of_agents' =>0,'District_initials'=>'MBA'] ]);
+
     }
 
     /**

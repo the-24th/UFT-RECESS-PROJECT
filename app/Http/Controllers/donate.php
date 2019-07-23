@@ -23,9 +23,8 @@ class donate extends Controller
         return redirect('tre')->with('success', 'DATA ADDED');
 
 
-        
-   
 
+        
     }
 
 }

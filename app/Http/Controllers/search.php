@@ -23,6 +23,7 @@ class search extends Controller
 
     }
 
+
     public function agents(Request $request)
     {
         $finds = DB::table('agents')-> where ('district', '=', [$request->search])
@@ -72,5 +73,6 @@ class search extends Controller
 
         return view('agentheadsearch')->with('finds',$finds)->with('data1',$data1)->with('data2',$data2)->with('data3',$data3);
     }
+
 
 }

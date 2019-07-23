@@ -10,7 +10,7 @@
   <script src="{{asset('//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')}}"></script>
   <script src="{{asset('//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')}}"></script>
   <script src="{{asset('//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js')}}"></script>
-  
+
 </head>
 <body>
 	<br /><br />
@@ -23,12 +23,12 @@
                                         <button type="submit" class="btn btn-primary btn-sm">Display</button></p>
                                     </label>
                                     </form>
-                               <a href="/donation"><button type="submit" class="btn btn-primary btn-sm">Back</button></a>
+                               <a href="/graph"><button type="submit" class="btn btn-primary btn-sm">All donations</button></a>
                                 </div>
-	<h2 align="center"><u>BAR GRAPH SHOWING DONATIONS.</u></h2>
+	<h2  style="align:center"><u>BAR GRAPH SHOWING DONATIONS.</u></h2>
    <br /><br />
    <div id="chart"></div>
-		
+
 	</div>
 
 

@@ -7,8 +7,8 @@
 <form action="/reg" method="post" class="form-horizontal">
 {{ csrf_field() }}
 <div class="col-lg-6">
-        <div class="card">
-            <div class="card-header">
+        <div class="card" style="margin-right:-500px;margin-left:50px;" >
+            <div class="card-header" style="text-align:center">
                 <strong>MONEY REGISTRATION</strong>
             </div>
             <div class="card-body card-block">
@@ -21,12 +21,12 @@
                             </div>
                         </div>
 
-            <div class="card-body card-block">
+            <div class="card-body card-block" >
 
                      <div class="row form-group">
                         <div class="col col-md-12">
                                 <div class="input-group">
-                                     <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                     <div class="input-group-addon"><i class="ti-home"></i></div>
                                      <input type="text" id="input1-group1" name="district" placeholder="District" required class="form-control">
                                      </div>
                                 </div>
@@ -37,7 +37,7 @@
                         <div class="row form-group">
                                  <div class="col col-md-12">
                                          <div class="input-group">
-                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                             <div class="input-group-addon"><i class="ti-mobile"></i></div>
                                                   <input type="text" id="input1-group1" name="number" placeholder="Telephone Number" required class="form-control">
                                             </div>
                                          </div>
@@ -54,8 +54,8 @@
                         <div class="row form-group">
                             <div class="col col-md-12">
                                 <div class="input-group">
-                                    <div class="input-group-addon"><i class="fa fa-euro"></i></div>
-                                    <input type="text" id="input3-group1" name="amount" placeholder=".." required class="form-control">
+                                    <div class="input-group-addon"><i>SHS.</i></div>
+                                    <input type="text" id="input3-group1" name="amount" placeholder="donation amount" required class="form-control">
                                     <div class="input-group-addon">/=</div>
                                 </div>
                             </div>
@@ -78,4 +78,5 @@
             </div>
         </div>
     </form>
+
 @endsection

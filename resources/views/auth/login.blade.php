@@ -56,7 +56,7 @@
                             </nav>
 
 
-                
+
             <div class="card">
 
                 <div class="card-header" style="background-color:black; color:white; text-align:center"><b>{{ __('LOGIN') }}</b></div>

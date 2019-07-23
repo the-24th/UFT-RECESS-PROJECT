@@ -64,13 +64,15 @@ class payment extends Controller
 
             DB::table('highest_enrollment_districts')->insert(
                 ['Agenthead_pay'=>3.5*$money, 'Agents_pay'=>2*$money]
-            );}
-            else {
-                $message = "Not enough Funds";
-                echo "<script type='text/javascript'>alert('$message');</script>";
-
-            }
+            );
 
             return redirect ('pay');
+        }
+            else {
+
+                return redirect('pay')->with('failure', 'Not enough funds');
+            }
+
+
         }
 }

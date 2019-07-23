@@ -4,18 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\agent;
+
 use App\agenthead;
 use DB;
-
-
-
-
 
 class forms extends Controller
 {
     public function register()
     {
-
        $conn = mysqli_connect('localhost','root','','recess');
         $sql = "SELECT name from districts where Number_of_agents < 10";
         $result = mysqli_query($conn, $sql);
@@ -33,9 +29,7 @@ class forms extends Controller
         $add->lname = request('lname');
         $add->number = request('telephone');
         $add->district = request('district');
-
         $add->date = request('date');
-
         $add->district_assigned = $rand;
         $add->sex = request('gender');
         $add->signature = request('sign');
