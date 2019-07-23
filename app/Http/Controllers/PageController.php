@@ -218,9 +218,16 @@ class PageController extends Controller
     }
 
     public function pays(){
-        $high = DB::select('select * from highest_enrollment_districts limit 1');
-        $normal = DB::select('select * from district_pay limit 1');
-        return view('pay')->with('high',$high)->with('normal',$normal);
+        /*$high = DB::table('highest_enrollment_districts')->get();
+        foreach ($high as $id) {
+            $number = $id->id;
+        }
+        $normal = DB::table('district_pay')->where('id', '=', $number)->get();*/
+        $payments = DB::table('highest_enrollment_districts')
+            ->join('district_pay', 'highest_enrollment_districts.id', '=', 'district_pay.id')
+            ->get();
+
+        return view('pay')->with('payments',$payments);
     }
 
     public function money(){

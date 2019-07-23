@@ -15,7 +15,7 @@ class CreateHighestEnrollmentDistrictsTable extends Migration
     {
         Schema::create('highest_enrollment_districts', function (Blueprint $table) {
             $table->bigIncrements('id');
-
+            $table->string('districtname');
             $table->integer('Agenthead_pay');
             $table->integer('Agents_pay');
             $table->timestamps();

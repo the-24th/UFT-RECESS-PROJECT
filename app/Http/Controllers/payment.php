@@ -10,6 +10,7 @@ class payment extends Controller
 {
 
         public function pays(){
+            if(date("d")==1){
             $conn = mysqli_connect("localhost", "root", "", "recess");
 
             $sql1 = "SELECT count(agentid) as 'agentnumber' from agents";
@@ -59,19 +60,27 @@ class payment extends Controller
             $money = $excess/($n + (1.75*$m) + (3.5*$M) + (2*$N) + 0.5);
 
             DB::table('district_pay')->insert(
-                ['Agenthead_pay'=>1.75*$money, 'Agents_pay'=>$money, 'Administrator_pay'=>0.5*$money]
+                ['Agentheadpay'=>1.75*$money, 'Agentspay'=>$money, 'Administrator_pay'=>0.5*$money]
             );
 
             DB::table('highest_enrollment_districts')->insert(
-                ['Agenthead_pay'=>3.5*$money, 'Agents_pay'=>2*$money]
+                ['districtname'=>$nameofhighest,'Agenthead_pay'=>3.5*$money, 'Agents_pay'=>2*$money]
             );
+            $payments = DB::table('highest_enrollment_districts')
+            ->join('district_pay', 'highest_enrollment_districts.id', '=', 'district_pay.id')
+            ->get();
 
-            return redirect ('pay');
+        return view('pay')->with('payments',$payments);
         }
             else {
 
-                return redirect('pay')->with('failure', 'Not enough funds');
+                return redirect('but')->with('failure', 'Not enough funds');
             }
+        }
+        else
+        {
+          return redirect('but')->with('failure', 'Month has not yet ended');  
+        }
 
 
         }

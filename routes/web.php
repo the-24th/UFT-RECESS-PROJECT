@@ -59,18 +59,13 @@ Route::post('/looksagenthead', 'search@agenthead');
 
 Route::post('/looking' , 'search@members');
 
-Route::get('/pay', 'PageController@pays');
-
+Route::get('/but', 'PageController@pays');
 
 Route::get('/edit','PageController@change');
 
-Route::get('/but','payment@pays');
+Route::get('/pay','payment@pays');
 
 Route::get('/agenthead', 'PageController@head');
-
-
-Route::get('/but','payment@pays');
-
 
 Route::post('/donate', 'search@donation');
 
