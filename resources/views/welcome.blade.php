@@ -92,7 +92,7 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
 
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}"><u>Login</u></a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}"><b><u>Register</u></b></a>
@@ -106,12 +106,13 @@
                 <div class="title m-b-md">
 
                     UFT
+                    <div class="links" style="font-size:25px">
+                        <p><b>UNITED FRONT FOR TRANSFORMATION POLITICAL PARTY</b></p>
+
+                    </div>
                 </div>
 
-                <div class="links">
-                    <p><b>UNITED FRONT FOR TRANSFORMATION POLITICAL PARTY</b></p>
 
-                </div>
             </div>
         </div>
     </body>

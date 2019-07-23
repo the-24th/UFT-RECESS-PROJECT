@@ -7,7 +7,7 @@
 <?php
 //index.php
 $connect = mysqli_connect("localhost", "root", "", "recess");
-$query = "SELECT * FROM donations";
+$query = "SELECT name,sum(amount) as amount FROM donations group by name";
 $result = mysqli_query($connect, $query);
 $chart_data = '';
 while($row = mysqli_fetch_array($result))
@@ -30,7 +30,17 @@ $chart_data = substr($chart_data, 0, -2);
 </head>
 <body>
 	<br /><br />
-	<div class="container" style="width:900px">
+    <div class="container" style="width:900px">
+        <div class="container" style="width:900px">
+            <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
+                                           <form method="post" action="/graphsearch">
+                                               {{ csrf_field() }}
+                                           <label>Display Donations from specific Month or Well-wisher:
+                                               <p><input type="search" name="search" class="form-control form-control-sm" placeholder="Month or Well-wisher" aria-controls="bootstrap-data-table-export">
+                                               <button type="submit" class="btn btn-primary btn-sm">Display</button></p>
+                                           </label>
+                                           </form>
+                                       </div>
 
 	<h2 text-align="center">Graph showing donations</h2>
 

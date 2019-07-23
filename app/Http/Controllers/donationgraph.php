@@ -103,7 +103,7 @@ class donationgraph extends Controller
 		return view('donation')->with('chart_data',$chart_data);
 		}
 		else if($outs == 'June' || $outs == 'june' || $outs == 6){
-		$finds = DB::table('donations')-> whereMonth('date', '6')
+        $finds = DB::table('donations')-> whereMonth('date', '6')
                                      ->get();
 
 		//$result = mysqli_query($connect, $query);
@@ -221,7 +221,7 @@ class donationgraph extends Controller
 			$chart_data = substr($chart_data, 0, -2);
 
 		return view('wellwisher')->with('chart_data',$chart_data)->with('outs',$outs);
-			
+
 
 		}
     }
@@ -230,7 +230,7 @@ class donationgraph extends Controller
     {
     	$conn = mysqli_connect("localhost", "root", "", "recess");
 			//$finds = DB::table('donations')->where('name', '=', [$outs])->get();
-			$month = "SELECT amount, MONTHNAME(date) as monthname from donations";
+			$month = "SELECT sum(amount) as amount, MONTHNAME(date) as monthname from donations group by monthname ORDER BY date" ;
 			$result2 = mysqli_query($conn, $month);
 			$chart_data = '';
 			while($data2 = mysqli_fetch_array($result2))
@@ -242,5 +242,23 @@ class donationgraph extends Controller
 
 		return view('funding')->with('chart_data',$chart_data);
     }
+
+    public function roll()
+    {
+    	$conn = mysqli_connect("localhost", "root", "", "recess");
+			//$finds = DB::table('donations')->where('name', '=', [$outs])->get();
+			$month = "SELECT count(name) as people, MONTHNAME(date_of_enrollment) as monthname from members group by monthname ORDER BY date_of_enrollment";
+			$result2 = mysqli_query($conn, $month);
+			$chart_data = '';
+			while($data2 = mysqli_fetch_array($result2))
+			{
+				$chart_data .= "{ monthname:'".$data2['monthname']."', amount:".$data2['people']."}, ";
+			}
+			$chart_data = substr($chart_data, 0, -2);
+
+
+		return view('enroll')->with('chart_data',$chart_data);
+    }
+
 
 }
