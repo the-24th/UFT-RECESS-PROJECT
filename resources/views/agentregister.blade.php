@@ -24,7 +24,7 @@
                                 <div class="col-8">
                                     <div class="form-group"><label for="postal-code" class=" form-control-label"></label><input name="district" type="text" id="" placeholder="District Name" required class="form-control"></div>
 
-                                    <div class="form-group"><label for="date" class=" form-control-label"></label><input name="date" type="text" id="" placeholder="Date" required class="form-control"></div>
+                                    <div class="form-group"><label for="date" class=" form-control-label"></label><input name="date" type="text" id="" placeholder="Date (yyyy/MM/dd)" required class="form-control"></div>
 
 
 

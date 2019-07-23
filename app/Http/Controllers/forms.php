@@ -35,7 +35,7 @@ class forms extends Controller
         $add->signature = request('sign');
         $add->save();
 
-        return redirect('agentslist')->with('success', 'DATA ADDED');
+        return redirect('agentslist')->with('success', 'REGISTERED');
 
     }
 

@@ -20,7 +20,7 @@ class donate extends Controller
 
         $donor->save();
 
-        return redirect('tre')->with('success', 'DATA ADDED');
+        return redirect('tre')->with('success', 'MONEY REGISTERED');
 
 
 

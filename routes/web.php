@@ -23,11 +23,33 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('agentslist', 'PageController');
+//Route::resource('agentslist', 'PageController');
 
 Route::post('/reg', 'donate@donate');
 
-Route::get('/delete/{agentid}', 'PageController@delete');
+Route::get('editagent/{agentid}','PageController@editagent');
+
+Route::post('/updateagent/{agentid}', 'PageController@updateagent');
+
+Route::get('/deleteagent/{agentid}', 'PageController@deleteagent');
+
+Route::get('editagenthead/{agentid}','PageController@editagenthead');
+
+Route::post('/updateagenthead/{agentid}', 'PageController@updateagenthead');
+
+Route::get('/deleteagenthead/{agentid}', 'PageController@deleteagenthead');
+
+Route::get('editmember/{id}','PageController@editmember');
+
+Route::post('/updatemember/{id}', 'PageController@updatemember');
+
+Route::get('/deletemember/{id}', 'PageController@deletemember');
+
+Route::get('edittreasure/{id}','PageController@edittreasure');
+
+Route::post('/updatetreasure/{id}', 'PageController@updatetreasure');
+
+Route::get('/deletetreasure/{id}', 'PageController@deletetreasure');
 
 Route::post('/registeragent', 'forms@register');
 

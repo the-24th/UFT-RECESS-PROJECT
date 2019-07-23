@@ -54,8 +54,10 @@
                                         <td>{{$mem->recommender}}</td>
                                         <td>
 
-                                                <a href=""><span class="ti-pencil"></span></a>
-                                                <a href=""><span class="ti-trash"></span></a>
+                                              
+                                        <a href="editmember/{{$mem->id}}"><span class="ti-pencil"></span></a>
+                                        <a href="/deletemember/{{$mem->id}}"><span class="ti-trash"></span></a>
+
                                             </td>
 
                                     </tr>

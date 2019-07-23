@@ -51,8 +51,8 @@
                     <td>{{$add->signature}}</td>
                     <td>
 
-                            <a href=""><span class="ti-pencil"></span></a>
-                            <a href=""><span class="ti-trash"></span></a>
+                            <a href="editagenthead/{{$add->agentid}}"><span class="ti-pencil"></span></a>
+                            <a href="/deleteagenthead/{{$add->agentid}}"><span class="ti-trash"></span></a>
                         </td>
                     </tr>
 

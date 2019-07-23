@@ -1,5 +1,5 @@
 @extends('layouts.adminhome')
-@section('title', 'Edit Agent')
+@section('title', 'Edit Agent head')
 
 @section('content')
 
@@ -12,7 +12,7 @@
 <div class="card">
         <div class="card-header"><strong>EDITING FORM</strong></div>
         <div class="card-body card-block">
-            <form method="post" action="/updateagent/{{ $agent[0]->agentid}}">
+            <form method="post" action="/updateagenthead/{{ $agent[0]->agentid}}">
                 {{ csrf_field() }}
                 
             <div class="form-group"><label for="first_name" class=" form-control-label"></label><input name="fname" type="text" id="company" value="{{$agent[0]->fname}}" placeholder="Enter first name" required class="form-control"></div>
