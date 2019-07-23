@@ -243,4 +243,22 @@ class donationgraph extends Controller
 		return view('funding')->with('chart_data',$chart_data);
     }
 
+    public function roll()
+    {
+    	$conn = mysqli_connect("localhost", "root", "", "recess");
+			//$finds = DB::table('donations')->where('name', '=', [$outs])->get();
+			$month = "SELECT count(name) as people, MONTHNAME(date_of_enrollment) as monthname from members group by monthname ORDER BY date_of_enrollment";
+			$result2 = mysqli_query($conn, $month);
+			$chart_data = '';
+			while($data2 = mysqli_fetch_array($result2))
+			{
+				$chart_data .= "{ monthname:'".$data2['monthname']."', amount:".$data2['people']."}, ";
+			}
+			$chart_data = substr($chart_data, 0, -2);
+
+
+		return view('enroll')->with('chart_data',$chart_data);
+    }
+
+
 }

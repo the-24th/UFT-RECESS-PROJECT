@@ -68,7 +68,7 @@ Route::get('/archy', 'PageController@arch');
 
 Route::get('/donation', 'donationgraph@draw');
 
-Route::get('/enroll', 'PageController@roll');
+Route::get('/enroll', 'donationgraph@roll');
 
 Route::get('/members', 'PageController@mem');
 
