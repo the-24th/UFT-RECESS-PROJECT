@@ -245,20 +245,38 @@ class donationgraph extends Controller
 
     public function roll()
     {
-    	$conn = mysqli_connect("localhost", "root", "", "recess");
-			//$finds = DB::table('donations')->where('name', '=', [$outs])->get();
-			$month = "SELECT count(name) as people, MONTHNAME(date_of_enrollment) as monthname from members group by monthname ORDER BY date_of_enrollment";
-			$result2 = mysqli_query($conn, $month);
-			$chart_data = '';
-			while($data2 = mysqli_fetch_array($result2))
-			{
-				$chart_data .= "{ monthname:'".$data2['monthname']."', amount:".$data2['people']."}, ";
-			}
-			$chart_data = substr($chart_data, 0, -2);
+        $chart_data = '';
+       $names = DB::select("SELECT MONTH(date_of_enrollment) as month from members group by date_of_enrollment");
+       foreach($names as $name)
+       {
+        if($name->month==1)
+        {
+            DB::select("SELECT count(id) as ones FROM members where month(date_of_enrollment)=1");
+            continue;
+        }
+         else
+            $number =DB::select("SELECT count(id) as people from members where month(date_of_enrollment)=$name->month");
+            $man=DB::select("SELECT MONTHNAME(date_of_enrollment) as girls from members where month(date_of_enrollment)=$name->month");
+            foreach($number as $num){
+               // if($name->month==1){
+                    //continue;
+                }
+                //else {
+                    $previous= DB::select("SELECT count(id) as be from members where month(date_of_enrollment)=$name->month-1");
+                    
+               // }
+                foreach($previous as $prev)
+                $change=(($num->people-$prev->be)/$prev->be)*100;
+                foreach($man as $ma){
+       // echo "$name->month, $num->people, $prev->be, $change <br/>";
+       $chart_data .= "{ month:'".$ma->girls."', amount:".$change."}, ";
+                }
+            }
+           
+       
+       $chart_data = substr($chart_data, 0, -2);
 
 
 		return view('enroll')->with('chart_data',$chart_data);
-    }
-
-
+}
 }

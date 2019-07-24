@@ -12,7 +12,7 @@
   <script src="{{asset('//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js')}}"></script>
 
 </head>
-<body>
+<body style="color:black">
 	<br /><br />
     <div class="container" style="width:900px">
 
