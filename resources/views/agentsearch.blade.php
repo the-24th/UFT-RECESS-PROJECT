@@ -61,8 +61,8 @@
                                     <td>
 
                                             
-                                        <a href="editagent/{{$add->agentid}}"><span class="ti-pencil"></span></a>
-                                        <a href="/deleteagent/{{$add->agentid}}"><span class="ti-trash"></span></a>
+                                        <a href="editagent/{{$find->agentid}}"><span class="ti-pencil"></span></a>
+                                        <a href="/deleteagent/{{$find->agentid}}"><span class="ti-trash"></span></a>
 
                                         </td>
                                     </tr>

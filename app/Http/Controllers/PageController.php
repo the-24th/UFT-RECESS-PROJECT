@@ -175,27 +175,131 @@ class PageController extends Controller
     }
 
     public function up(){
-        return view('upgrade');
+        $conn = mysqli_connect('localhost','root','','recess');
+        $sql = "SELECT * from members";
+        $result = mysqli_query($conn, $sql);
+        $names = array();
+        $counter = 0;
+        $number = DB::select("SELECT count(id) as 'total' from members");
+        foreach ($number as $numeral) {
+            $tots = $numeral->total;
+        }
+        
+        while($names[] = mysqli_fetch_array($result))
+        {
+            if(++$counter==$tots)
+                {
+                    $length = count($names);
+                    $n = 0;
+                    for($n=0; $n<$length; $n++)
+                    {
+                        if($n==0)
+                        {
+                         $name = $names[$n]['name'];
+                         $get = "SELECT count(id) as 'total' from members where recommender='$name'";
+                         $result1 = mysqli_query($conn, $get);
+                         $data1 = mysqli_fetch_array($result1);
+                         if($data1['total']>=40)
+                         {
+                            $data2 = DB::select("SELECT * from members where name='$name'");
+                            return view('upgrade')->with('data2',$data2);
+                         }
+                         else continue;
+                         
+                        }
+                        else if($n==1)
+                        {
+                          $name = $names[$n]['name'];
+                         $get = "SELECT count(id) as 'total' from members where recommender='$name'";
+                         $result1 = mysqli_query($conn, $get);
+                         $data1 = mysqli_fetch_array($result1);
+                         if($data1['total']>=40)
+                         {
+                            $data2 = DB::select("SELECT * from members where name='$name'");
+                            return view('upgrade')->with('data2',$data2);
+                         }
+                         else continue;  
+                        }
+                        else if($n==2)
+                        {
+                          $name = $names[$n]['name'];
+                         $get = "SELECT count(id) as 'total' from members where recommender='$name'";
+                         $result1 = mysqli_query($conn, $get);
+                         $data1 = mysqli_fetch_array($result1);
+                         if($data1['total']>=40)
+                         {
+                            $data2 = DB::select("SELECT * from members where name='$name'");
+                            return view('upgrade')->with('data2',$data2);
+                         }
+                         else continue;  
+                        }
+                        else if($n==3)
+                        {
+                          $name = $names[$n]['name'];
+                         $get = "SELECT count(id) as 'total' from members where recommender='$name'";
+                         $result1 = mysqli_query($conn, $get);
+                         $data1 = mysqli_fetch_array($result1);
+                         if($data1['total']>=40)
+                         {
+                            $data2 = DB::select("SELECT * from members where name='$name'");
+                            return view('upgrade')->with('data2',$data2);
+                         }
+                         else continue;  
+                        }
+                        else if($n==4)
+                        {
+                          $name = $names[$n]['name'];
+                         $get = "SELECT count(id) as 'total' from members where recommender='$name'";
+                         $result1 = mysqli_query($conn, $get);
+                         $data1 = mysqli_fetch_array($result1);
+                         if($data1['total']>=40)
+                         {
+                            $data2 = DB::select("SELECT * from members where name='$name'");
+                            return view('upgrade')->with('data2',$data2);
+                         }
+                         else continue;  
+                        }
+                        else if($n==5)
+                        {
+                          $name = $names[$n]['name'];
+                         $get = "SELECT count(id) as 'total' from members where recommender='$name'";
+                         $result1 = mysqli_query($conn, $get);
+                         $data1 = mysqli_fetch_array($result1);
+                         if($data1['total']>=40)
+                         {
+                            $data2 = DB::select("SELECT * from members where name='$name'");
+                            return view('upgrade')->with('data2',$data2);
+                         }
+                         else continue;  
+                        }
+                        else return redirect('home')->with('failure', 'No Recommendations Available');
+                    }
+
+                }
+        }
     }
 
     public function edittreasure($id)
     {
-        //$agent = agent::find($agentid);
         $donor = DB::select("select * from donations where id=?", [$id]);
         return view('layouts.treasureedit', ['donor'=>$donor]);
     }
 
+    public function upgrading($id)
+    {
+        $data = DB::select("select * from members where id=?", [$id]);
+        DB::table('members')->where('id', '=', $id)->delete();
+        return view('layouts.upgrading', ['data'=>$data]);
+    }
    
           public function updatetreasure(Request $request, $id)
     {
-        //$agent = agent::find($agentid);
         $donor_name = $request->input('name');
         $donor_district = $request->input('district');
         $donor_Telephone_number = $request->input('Telephone_number');
         $donor_email = $request->input('email');
         $donor_amount = $request->input('amount');
         $donor_date = $request->input('date');
-                //$agent->save();
         DB::update("update donations set name=?, district=?, Telephone_number=?, email=?, amount=?, date=? where id=?", [$donor_name, $donor_district, $donor_Telephone_number, $donor_email, $donor_amount, $donor_date, $id]);
         return redirect('tre')->with('success', 'Data Updated');
     }
@@ -225,11 +329,6 @@ class PageController extends Controller
     }
 
     public function pays(){
-        /*$high = DB::table('highest_enrollment_districts')->get();
-        foreach ($high as $id) {
-            $number = $id->id;
-        }
-        $normal = DB::table('district_pay')->where('id', '=', $number)->get();*/
         $payments = DB::table('highest_enrollment_districts')
             ->join('district_pay', 'highest_enrollment_districts.id', '=', 'district_pay.id')
             ->get();
