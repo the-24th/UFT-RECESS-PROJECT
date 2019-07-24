@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-header">
                             <div style="margin-left:900px">
-                                    <a href="/but"> <button type="button" class="btn btn-primary btn-sm" onmouseover="change()">Make Payment</button></a>
+                                    <!--<a href="/but"> <button type="button" class="btn btn-primary btn-sm" onmouseover="change()">Make Payment</button></a>-->
                                      </div>
                         <strong class="card-title">Payment distribution</strong>
                     </div>
@@ -20,38 +20,35 @@
 
                             </div>
 
-
-
-
-
-
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
-                                <th colspan=2>Highest Enrollment Pay</th>
-                                <th colspan=3>Normal pay</th>
+                                <th colspan=3>Highest Enrollment Pay per head</th>
+                                <th colspan=3>Normal pay per head</th>
 
                             </thead>
                             <tbody>
 
                                     <tr>
+                                            <td>District name</td>
                                             <td>Agent head</td>
                                             <td>Agents</td>
                                             <td>Agent heads</td>
                                             <td>Agents</td>
                                             <td>Administrator</td>
+                                            <td>Date</td>
 
 
                                         </tr>
-                                        @foreach($high as $hi)
-                                        @foreach($normal as $norm)
+                                     @foreach($payments as $payment)
                                 <tr>
-                                <td>{{$hi->Agenthead_pay}}</td>
-                                <td>{{$hi->Agents_pay}}</td>
-                                <td>{{$norm->Agenthead_pay}}</td>
-                                <td>{{$norm->Agents_pay}}</td>
-                                <td>{{$norm->Administrator_pay}}</td>
+                                <td>{{$payment->districtname}}</td>
+                                <td>{{$payment->Agenthead_pay}}</td>
+                                <td>{{$payment->Agents_pay}}</td>
+                                <td>{{$payment->Agentheadpay}}</td>
+                                <td>{{$payment->Agentspay}}</td>
+                                <td>{{$payment->Administrator_pay}}</td>
+                                <td>{{date("Y-m-d")}}</td>
                                 </tr>
-                                @endforeach
                                 @endforeach
 
                             </tbody>

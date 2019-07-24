@@ -15,8 +15,8 @@ class CreateDistrictPayTable extends Migration
     {
         Schema::create('district_pay', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('Agenthead_pay');
-            $table->integer('Agents_pay');
+            $table->integer('Agentheadpay');
+            $table->integer('Agentspay');
             $table->integer('Administrator_pay');
             $table->timestamps();
         });

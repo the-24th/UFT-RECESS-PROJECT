@@ -57,8 +57,9 @@
                                         <td>{{ $donor->amount}}</td>
                                         <td>
 
-                                                <a href=""><span class="ti-pencil"></span></a>
-                                                <a href=""><span class="ti-trash"></span></a>
+                                        <a href="edittreasure/{{$donor->id}}"><span class="ti-pencil"></span></a>
+                                        <a href="/deletetreasure/{{$donor->id}}"><span class="ti-trash"></span></a>
+
                                             </td>
 
                                         <td>{{ $donor->date}}</td>

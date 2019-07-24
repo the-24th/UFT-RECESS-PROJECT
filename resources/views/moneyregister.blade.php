@@ -60,7 +60,7 @@
                                 </div>
                             </div>
 
-                             <div class="form-group"><label for="date" class=" form-control-label"></label><input name="date" type="text" id="" placeholder="Date" required class="form-control"></div>
+                             <div class="form-group"><label for="date" class=" form-control-label"></label><input name="date" type="text" id="" placeholder="Date (yyyy/MM/dd)" required class="form-control"></div>
 
                         </div>
 
@@ -68,7 +68,7 @@
                 <div class="">
 
                     <button type="submit" class="btn">
-                        <i class="fa fa-dot-circle-o"></i> Submit
+                        <i class="fa fa-dot-circle-o"></i> Register
                     </button>
                     <button type="reset" class="btn">
 

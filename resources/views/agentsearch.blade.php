@@ -60,8 +60,10 @@
                                     <td>{{$find->signature}}</td>
                                     <td>
 
-                                            <a href=""><span class="ti-pencil"></span></a>
-                                            <a href=""><span class="ti-trash"></span></a>
+                                            
+                                        <a href="editagent/{{$add->agentid}}"><span class="ti-pencil"></span></a>
+                                        <a href="/deleteagent/{{$add->agentid}}"><span class="ti-trash"></span></a>
+
                                         </td>
                                     </tr>
 

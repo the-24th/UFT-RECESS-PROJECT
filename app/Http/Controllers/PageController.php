@@ -12,31 +12,32 @@ class PageController extends Controller
         return view('agentregister');
     }
 
-        public function edit($agentid)
+        public function editagent($agentid)
     {
-        $agent = agent::find($agentid);
-        return view('layouts.agentedit', compact('agent', 'agentid'));
+        //$agent = agent::find($agentid);
+        $agent = DB::select("select * from agents where agentid=?", [$agentid]);
+        return view('layouts.agentedit', ['agent'=>$agent]);
     }
 
    
-          public function update(Request $request, $agentid)
+          public function updateagent(Request $request, $agentid)
     {
-       $agent = agent::find($agentid);
+        //$agent = agent::find($agentid);
 
-
-       $agent->fname = $request->get('fname');
-        $agent->lname = $request->get('lname');
-        $agent->number = $request->get('telephone');
-        $agent->district = $request->get('district');
-        $agent->date = $request->get('date');
-        $agent->district_assigned = $request->get('district_assigned');
-        $agent->sex = $request->get('gender');
-        $agent->signature = $request->get('sign');
-        $agent->save();
+        $agent_fname = $request->input('fname');
+        $agent_lname = $request->input('lname');
+        $agent_number = $request->input('telephone');
+        $agent_district = $request->input('district');
+        $agent_date = $request->input('date');
+        $agent_district_assigned = $request->input('district_assigned');
+        $agent_sex = $request->input('gender');
+        $agent_signature = $request->input('sign');
+        //$agent->save();
+        DB::update("update agents set fname=?, lname=?, number=?, district=?, date=?, district_assigned=?, sex=?, signature=? where agentid=?", [$agent_fname, $agent_lname, $agent_number, $agent_district, $agent_date, $agent_district_assigned, $agent_sex, $agent_signature, $agentid]);
         return redirect('agentslist')->with('success', 'Data Updated');
     }
 
-    public function delete($agentid)
+    public function deleteagent($agentid)
     {
         $conn = mysqli_connect('localhost','root','','recess');
         $sql = "SELECT * from agents where agentid= $agentid";
@@ -48,6 +49,45 @@ class PageController extends Controller
         DB::table('agents')->where('agentid',$agentid)->delete();
 
        return redirect('agentslist')->with('success', 'Deleted');   
+    }
+
+     public function editagenthead($agentid)
+    {
+        //$agent = agent::find($agentid);
+        $agent = DB::select("select * from agentheads where agentid=?", [$agentid]);
+        return view('layouts.agentheadedit', ['agent'=>$agent]);
+    }
+
+   
+          public function updateagenthead(Request $request, $agentid)
+    {
+        //$agent = agent::find($agentid);
+
+        $agent_fname = $request->input('fname');
+        $agent_lname = $request->input('lname');
+        $agent_number = $request->input('telephone');
+        $agent_district = $request->input('district');
+        $agent_date = $request->input('date');
+        $agent_district_assigned = $request->input('district_assigned');
+        $agent_sex = $request->input('gender');
+        $agent_signature = $request->input('sign');
+        //$agent->save();
+        DB::update("update agentheads set fname=?, lname=?, number=?, district=?, date=?, district_assigned=?, sex=?, signature=? where agentid=?", [$agent_fname, $agent_lname, $agent_number, $agent_district, $agent_date, $agent_district_assigned, $agent_sex, $agent_signature, $agentid]);
+        return redirect('agenthead')->with('success', 'Data Updated');
+    }
+
+    public function deleteagenthead($agentid)
+    {
+        $conn = mysqli_connect('localhost','root','','recess');
+        $sql = "SELECT * from agentheads where agentid= $agentid";
+        $result1 = mysqli_query($conn, $sql);
+        $data1 = mysqli_fetch_array($result1);
+        $district_assigned = $data1['district_assigned'];
+        $minus = "UPDATE districts set Number_of_agents=Number_of_agents-1 where name='$district_assigned'";
+        $result1 = mysqli_query($conn, $minus);
+        DB::table('agentheads')->where('agentid',$agentid)->delete();
+
+       return redirect('agenthead')->with('success', 'Deleted');   
     }
 
     public function list(){
@@ -75,6 +115,7 @@ class PageController extends Controller
         $fname = $data['fname'];
         $lname = $data['lname'];
 
+
         $agent = "SELECT fname from agents where district_assigned ='$district'";
         $result1 = mysqli_query($conn, $agent);
         $data1 = mysqli_fetch_assoc($result1);
@@ -82,20 +123,51 @@ class PageController extends Controller
         //$agentlnames = $data1['lname'];
         //$data1 = DB::table("agents")->where('district_assigned', '$district')->get();
         
-
         return view('tree')->with('fname', $fname)->with('lname', $lname)->with('data1', $data1)->with('district', $district);
     }
     public function roll(){
         return view('enroll');
     }
 
-    /*public function fun(){
-        return view('funding');
-    }*/
-
     public function mem(){
         $mems= DB::select('select * from members');
         return view('members', compact('mems'));
+    }
+
+     public function editmember($id)
+    {
+        //$agent = agent::find($agentid);
+        $mem = DB::select("select * from members where id=?", [$id]);
+        return view('layouts.memberedit', ['mem'=>$mem]);
+    }
+
+   
+          public function updatemember(Request $request, $id)
+    {
+        //$agent = agent::find($agentid);
+        $mem_name = $request->input('name');
+        $mem_gender = $request->input('gender');
+        $mem_district = $request->input('district');
+        $mem_date_of_enrollment = $request->input('date_of_enrollment');
+        $mem_enrolled_by = $request->input('enrolled_by');
+        $mem_recommender = $request->input('recommender');
+                //$agent->save();
+        DB::update("update members set name=?, gender=?, district=?, date_of_enrollment=?, enrolled_by=?, recommender=? where id=?", [$mem_name, $mem_gender, $mem_district, $mem_date_of_enrollment, $mem_enrolled_by, $mem_recommender, $id]);
+        return redirect('members')->with('success', 'Data Updated');
+    }
+
+    public function deletemember($id)
+    {
+        $conn = mysqli_connect('localhost','root','','recess');
+        $sql = "SELECT * from members where id= $id";
+        $result1 = mysqli_query($conn, $sql);
+        $data1 = mysqli_fetch_array($result1);
+        $district = $data1['district'];
+        $minus = "UPDATE districts set members_enrolled=members_enrolled-1 where name='$district'";
+        $result1 = mysqli_query($conn, $minus);
+        DB::table('members')->where('id',$id)->delete();
+
+       return redirect('members')->with('success', 'Deleted');   
     }
 
     public function mon(){
@@ -104,6 +176,36 @@ class PageController extends Controller
 
     public function up(){
         return view('upgrade');
+    }
+
+    public function edittreasure($id)
+    {
+        //$agent = agent::find($agentid);
+        $donor = DB::select("select * from donations where id=?", [$id]);
+        return view('layouts.treasureedit', ['donor'=>$donor]);
+    }
+
+   
+          public function updatetreasure(Request $request, $id)
+    {
+        //$agent = agent::find($agentid);
+        $donor_name = $request->input('name');
+        $donor_district = $request->input('district');
+        $donor_Telephone_number = $request->input('Telephone_number');
+        $donor_email = $request->input('email');
+        $donor_amount = $request->input('amount');
+        $donor_date = $request->input('date');
+                //$agent->save();
+        DB::update("update donations set name=?, district=?, Telephone_number=?, email=?, amount=?, date=? where id=?", [$donor_name, $donor_district, $donor_Telephone_number, $donor_email, $donor_amount, $donor_date, $id]);
+        return redirect('tre')->with('success', 'Data Updated');
+    }
+
+    public function deletetreasure($id)
+    {
+       
+        DB::table('donations')->where('id',$id)->delete();
+
+       return redirect('tre')->with('success', 'Deleted');   
     }
 
     public function high(){
@@ -123,9 +225,16 @@ class PageController extends Controller
     }
 
     public function pays(){
-        $high = DB::select('select * from highest_enrollment_districts limit 1');
-        $normal = DB::select('select * from district_pay limit 1');
-        return view('pay')->with('high',$high)->with('normal',$normal);
+        /*$high = DB::table('highest_enrollment_districts')->get();
+        foreach ($high as $id) {
+            $number = $id->id;
+        }
+        $normal = DB::table('district_pay')->where('id', '=', $number)->get();*/
+        $payments = DB::table('highest_enrollment_districts')
+            ->join('district_pay', 'highest_enrollment_districts.id', '=', 'district_pay.id')
+            ->get();
+
+        return view('pay')->with('payments',$payments);
     }
 
     public function money(){
