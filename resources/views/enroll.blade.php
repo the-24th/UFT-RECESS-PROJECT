@@ -30,7 +30,7 @@
 Morris.Line({
  element : 'chart',
  data:[<?php echo $chart_data; ?>],
- xkey:'monthname',
+ xkey:'month',
  parseTime: false,
  ykeys:['amount'],
  labels:['Amount'],
