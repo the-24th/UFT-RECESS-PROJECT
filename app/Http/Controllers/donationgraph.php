@@ -256,7 +256,7 @@ class donationgraph extends Controller
         }
          else
             $number =DB::select("SELECT count(id) as people from members where month(date_of_enrollment)=$name->month");
-            $man=DB::select("SELECT MONTHNAME(date_of_enrollment) as girls from members where month(date_of_enrollment)=$name->month");
+            $man=DB::select("SELECT MONTHNAME(date_of_enrollment) as girls from members where month(date_of_enrollment)=$name->month group by date_of_enrollment");
             foreach($number as $num){
                // if($name->month==1){
                     //continue;

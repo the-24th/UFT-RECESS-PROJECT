@@ -33,7 +33,7 @@ Morris.Line({
  xkey:'month',
  parseTime: false,
  ykeys:['amount'],
- labels:['Amount'],
+ labels:['Percentage change'],
  hideHover:'auto',
  stacked:true
 });
