@@ -352,7 +352,7 @@ int main() {
     }
 	else
 	{
-		printf("Invalid signature");
+		send(sock, "Invalid", 7 ,0);
 	}
 	
 
