@@ -266,7 +266,16 @@ class donationgraph extends Controller
                     
                // }
                 foreach($previous as $prev)
-                $change=(($num->people-$prev->be)/$prev->be)*100;
+                	if($prev->be==0)
+                	{
+                		$change=0;
+                		continue;
+                	}
+                	else
+                	{
+                		$change=(($num->people-$prev->be)/$prev->be)*100;
+                	}
+          
                 foreach($man as $ma){
        // echo "$name->month, $num->people, $prev->be, $change <br/>";
        $chart_data .= "{ month:'".$ma->girls."', amount:".$change."}, ";
