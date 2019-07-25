@@ -116,11 +116,11 @@ class PageController extends Controller
         $lname = $data['lname'];
 
 
-        $agent = "SELECT fname from agents where district_assigned ='$district'";
-        $result1 = mysqli_query($conn, $agent);
-        $data1 = mysqli_fetch_assoc($result1);
 
-        return view('tree')->with('fname', $fname)->with('lname', $lname)->with('data1', $data1)->with('district', $district);
+        $agents = DB::select("SELECT fname from agents where district_assigned ='$district' and fname!='$fname'");
+         
+        return view('tree')->with('fname', $fname)->with('lname', $lname)->with('agents', $agents)->with('district', $district);
+
     }
 
     public function roll(){
