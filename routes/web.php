@@ -51,6 +51,8 @@ Route::post('/updatetreasure/{id}', 'PageController@updatetreasure');
 
 Route::get('/deletetreasure/{id}', 'PageController@deletetreasure');
 
+Route::get('upgrader/{id}','PageController@upgrading');
+
 Route::post('/registeragent', 'forms@register');
 
 Route::post('/looks' , 'search@agents');

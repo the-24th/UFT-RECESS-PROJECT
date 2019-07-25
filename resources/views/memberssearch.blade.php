@@ -59,8 +59,8 @@
 
                                         <td>
 
-                                                <a href="editmember/{{$mem->id}}"><span class="ti-pencil"></span></a>
-                                        <a href="/deletemember/{{$mem->id}}"><span class="ti-trash"></span></a>
+                                                <a href="editmember/{{$find->id}}"><span class="ti-pencil"></span></a>
+                                        <a href="/deletemember/{{$find->id}}"><span class="ti-trash"></span></a>
 
                                             </td>
 

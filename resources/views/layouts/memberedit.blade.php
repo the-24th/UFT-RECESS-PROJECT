@@ -23,7 +23,7 @@
                                 <div class="col-8">
                                     <div class="form-group"><label for="postal-code" class=" form-control-label"></label><input name="enrolled_by" type="text" id="" value="{{$mem[0]->enrolled_by}}" placeholder="Enrolled by" required class="form-control"></div>
 
-                                    <div class="form-group"><label for="date" class=" form-control-label"></label><input name="recommendor" type="text" id="" placeholder="Recommendor" value="{{$mem[0]->recommendor}}" required class="form-control"></div>
+                                    <div class="form-group"><label for="date" class=" form-control-label"></label><input name="recommender" type="text" id="" placeholder="Recommender" value="{{$mem[0]->recommender}}" required class="form-control"></div>
 
                                     <button type="submit" class="btn" style="" >Edit</button>
                                     <button type="reset" class="btn">Refresh</button>

@@ -22,18 +22,23 @@
                                         <th>Name</th>
                                         <th>Gender</th>
                                         <th>District</th>
+                                        <th>Actions</th>
 
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-
+                                    @foreach($data2 as $data)
+                                    <tr>                                       
+                                        <td>{{$data->id}}</td>
+                                        <td>{{$data->name}}</td>
+                                        <td>{{$data->gender}}</td>
+                                        <td>{{$data->district}}</td>
+                                        <td>
+                                            <a href="upgrader/{{$data->id}}"><button type="submit" class="btn" style="" >Upgrade</button></a>
+                                        </td>
                                     </tr>
+                                    @endforeach
 
 
                                 </tbody>

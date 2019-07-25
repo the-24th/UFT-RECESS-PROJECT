@@ -22,8 +22,6 @@ class forms extends Controller
         $plus = "UPDATE districts set Number_of_agents=Number_of_agents+1 where name='$rand'";
         $result1 = mysqli_query($conn, $plus);
 
-
-
         $add = new agent();
         $add->fname = request('fname');
         $add->lname = request('lname');
