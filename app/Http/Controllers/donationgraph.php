@@ -249,31 +249,28 @@ class donationgraph extends Controller
        $names = DB::select("SELECT MONTH(date_of_enrollment) as month from members group by date_of_enrollment");
        foreach($names as $name)
        {
-        if($name->month==1)
-        {
-            DB::select("SELECT count(id) as ones FROM members where month(date_of_enrollment)=1");
-            continue;
-        }
-         else
+
             $number =DB::select("SELECT count(id) as people from members where month(date_of_enrollment)=$name->month");
             $man=DB::select("SELECT MONTHNAME(date_of_enrollment) as girls from members where month(date_of_enrollment)=$name->month group by date_of_enrollment");
             foreach($number as $num){
-               // if($name->month==1){
-                    //continue;
-                }
-                //else {
+
                     $previous= DB::select("SELECT count(id) as be from members where month(date_of_enrollment)=$name->month-1");
-                    
-               // }
+
+              
                 foreach($previous as $prev)
-                $change=(($num->people-$prev->be)/$prev->be)*100;
+                if($prev->be==0){
+                    $change=0;
+                    continue;}
+                else{
+                $change=(($num->people-$prev->be)/$prev->be)*100;}
                 foreach($man as $ma){
        // echo "$name->month, $num->people, $prev->be, $change <br/>";
        $chart_data .= "{ month:'".$ma->girls."', amount:".$change."}, ";
-                }
+				}
+			}
             }
-           
-       
+
+
        $chart_data = substr($chart_data, 0, -2);
 
 

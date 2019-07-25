@@ -1,7 +1,7 @@
 @extends('layouts.adminhome')
 @section('title', 'Hierarchy')
 @section('content')
-<!-- <?php 
+<!-- <?php
 //index.php
 $connect = mysqli_connect("localhost", "root", "", "recess");
 $query = "SELECT * FROM agents";
@@ -34,10 +34,10 @@ $names = substr($names, 0, -2);
            ['{{@$data['fname']}}','@php echo $fname." ".$lname;@endphp', 'AGENT'],
           @endforeach
         ]);
-       
-          
-         
-       
+
+
+
+
 
         // Create the chart.
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
@@ -59,7 +59,7 @@ $names = substr($names, 0, -2);
                                    <div class="container" style=="width:900px">
 <h2 align="center"><u>HIERACHY CHART FOR THE AGENTS IN @php echo $district @endphp .</u></h2>
     <div id="chart_div"></div>
- 
+
   </body>
 </html>
 @endsection
