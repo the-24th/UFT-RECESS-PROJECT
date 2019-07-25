@@ -83,7 +83,7 @@ Route::get('/funding', 'donationgraph@funding');
 
 Route::get('/agentslist', 'PageController@list');
 
-Route::post('/archy', 'PageController@arch');
+Route::get('/archy', 'PageController@arch');
 
 Route::get('/donation', 'donationgraph@draw');
 

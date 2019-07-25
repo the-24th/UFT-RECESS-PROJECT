@@ -1,18 +1,7 @@
 @extends('layouts.adminhome')
 @section('title', 'Hierarchy')
 @section('content')
-<<<<<<< HEAD
-<!-- <?php
-//index.php
-$connect = mysqli_connect("localhost", "root", "", "recess");
-$query = "SELECT * FROM agents";
-$result = mysqli_query($connect, $query);
-$names = '';
-while($row = mysqli_fetch_array($result))
-{
- $names .= "{ fname:'".$row["fname"]."'}, ";
-}
-$names = substr($names, 0, -2);
+
 
 <html>
   <head>
@@ -32,7 +21,7 @@ $names = substr($names, 0, -2);
           [{v:'@php echo $fname." ".$lname;@endphp', f:'@php echo $fname." ".$lname;@endphp<div style="color:red; font-style:italic">AGENT HEAD</div>'},
            '', 'THE AGENT HEAD'],
           @foreach($agents as $agent)
-           ['{{$agent->fname}}','@php echo $fname." ".$lname;@endphp', 'AGENT'],
+           ['{{$agent->fname." ".$agent->lname}}.<br/><div style="color:blue; font-style:italic">AGENT</div>','@php echo $fname." ".$lname;@endphp', 'AGENT'],
           @endforeach
         ]);
 
@@ -41,8 +30,8 @@ $names = substr($names, 0, -2);
 
 
 
-       
-          
+
+
 
         // Create the chart.
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
@@ -61,8 +50,8 @@ $names = substr($names, 0, -2);
                                     </label>
                                     </form>
                                 </div>
-                                   <div class="container" style=="width:900px">
-<h2 align="center"><u>HIERACHY CHART FOR THE AGENTS IN @php echo $district @endphp .</u></h2>
+                                   <div class="container" style="width:900px">
+<h2 style="align:center"><u>HIERACHY CHART FOR THE AGENTS IN @php echo $district @endphp .</u></h2>
     <div id="chart_div"></div>
 
   </body>

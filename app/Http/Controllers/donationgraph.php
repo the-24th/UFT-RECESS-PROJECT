@@ -243,7 +243,7 @@ class donationgraph extends Controller
 		return view('funding')->with('chart_data',$chart_data);
     }
 
-    public function roll()
+    public function rol()
     {
         $chart_data = '';
        $names = DB::select("SELECT MONTH(date_of_enrollment) as month from members group by date_of_enrollment");
@@ -256,7 +256,7 @@ class donationgraph extends Controller
 
                     $previous= DB::select("SELECT count(id) as be from members where month(date_of_enrollment)=$name->month-1");
 
-              
+
                 foreach($previous as $prev)
 
                 if($prev->be==0){
@@ -278,4 +278,15 @@ class donationgraph extends Controller
 
 		return view('enroll')->with('chart_data',$chart_data);
 }
+
+    public function roll(){
+        $members= DB::select('SELECT id, name as people from members ');
+
+        foreach($members as $mem){
+              $members= DB::select('SELECT district as pe from members where id = $mem->id');
+              foreach($district as $dist){}
+            echo "$mem->id, $mem->people, $dist->pe<br/>";
+
+        }
+    }
 }

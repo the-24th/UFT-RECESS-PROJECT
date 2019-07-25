@@ -117,8 +117,8 @@ class PageController extends Controller
 
 
 
-        $agents = DB::select("SELECT fname from agents where district_assigned ='$district' and fname!='$fname'");
-         
+        $agents = DB::select("SELECT * from agents where district_assigned ='$district' and fname!='$fname'");
+
         return view('tree')->with('fname', $fname)->with('lname', $lname)->with('agents', $agents)->with('district', $district);
 
     }
