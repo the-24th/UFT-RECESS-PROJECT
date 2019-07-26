@@ -20,6 +20,7 @@ class donationgraph extends Controller
 		$chart_data = substr($chart_data, 0, -2);
 
 		return view('donation')->with('chart_data',$chart_data);
+		mysqli_close($connect);
     }
 
      public function drawwhere(Request $request)
@@ -222,7 +223,7 @@ class donationgraph extends Controller
 
 		return view('wellwisher')->with('chart_data',$chart_data)->with('outs',$outs);
 
-
+		mysqli_close($conn);
 		}
     }
 
@@ -241,6 +242,7 @@ class donationgraph extends Controller
 
 
 		return view('funding')->with('chart_data',$chart_data);
+		mysqli_close($conn);
     }
 
     public function roll()

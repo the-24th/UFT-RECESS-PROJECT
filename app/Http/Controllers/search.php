@@ -72,6 +72,7 @@ class search extends Controller
         $data3 = mysqli_fetch_array($res3);
 
         return view('agentheadsearch')->with('finds',$finds)->with('data1',$data1)->with('data2',$data2)->with('data3',$data3);
+        mysqli_close($conn);
     }
 
 

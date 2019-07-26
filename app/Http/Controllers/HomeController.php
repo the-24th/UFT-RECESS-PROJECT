@@ -70,5 +70,6 @@ class HomeController extends Controller
 
 
         return view('home')->with('data1',$data1)->with('data2',$data2)->with('data3',$data3)->with('hero',$hero);
+        mysqli_close($conn);
     }
 }

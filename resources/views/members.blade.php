@@ -45,7 +45,7 @@
                                         @foreach ($mems as $mem)
                                     <tr>
 
-                                        <td>{{$mem->id}}</td>
+                                        <td>{{$mem->member_id}}</td>
                                         <td>{{$mem->name}}</td>
                                         <td>{{$mem->gender}}</td>
                                         <td>{{$mem->district}}</td>

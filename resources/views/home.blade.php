@@ -58,7 +58,7 @@
 
                         <div class="stat-text"><b>Upgrades</b></div>
 
-                        <div class="stat-digit">770</div>
+                        <div class="stat-text">Tap to Check</div>
 
                     </div>
                 </div>
