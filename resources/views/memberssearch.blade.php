@@ -49,7 +49,7 @@
                                         @foreach ($finds as $find)
                                     <tr>
 
-                                        <td>{{$find->id}}</td>
+                                        <td>{{$find->member_id}}</td>
                                         <td>{{$find->name}}</td>
                                         <td>{{$find->gender}}</td>
                                         <td>{{$find->district}}</td>

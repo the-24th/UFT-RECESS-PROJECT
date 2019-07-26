@@ -81,7 +81,7 @@ class payment extends Controller
         {
           return redirect('but')->with('failure', 'Month has not yet ended');  
         }
-
+        mysqli_close($conn);
 
         }
 }

@@ -30,7 +30,7 @@
                                 <tbody>
                                     @foreach($data2 as $data)
                                     <tr>                                       
-                                        <td>{{$data->id}}</td>
+                                        <td>{{$data->member_id}}</td>
                                         <td>{{$data->name}}</td>
                                         <td>{{$data->gender}}</td>
                                         <td>{{$data->district}}</td>

@@ -34,6 +34,7 @@ class forms extends Controller
         $add->save();
 
         return redirect('agentslist')->with('success', 'REGISTERED');
+        mysqli_close($conn);
 
     }
 

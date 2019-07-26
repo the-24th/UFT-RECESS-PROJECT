@@ -48,7 +48,8 @@ class PageController extends Controller
         $result1 = mysqli_query($conn, $minus);
         DB::table('agents')->where('agentid',$agentid)->delete();
 
-       return redirect('agentslist')->with('success', 'Deleted');   
+       return redirect('agentslist')->with('success', 'Deleted');  
+       mysqli_close($conn); 
     }
 
      public function editagenthead($agentid)
@@ -88,6 +89,7 @@ class PageController extends Controller
         DB::table('agentheads')->where('agentid',$agentid)->delete();
 
        return redirect('agenthead')->with('success', 'Deleted');   
+       mysqli_close($conn);
     }
 
     public function list(){
@@ -119,14 +121,10 @@ class PageController extends Controller
         $agents = DB::select("SELECT fname from agents where district_assigned ='$district' and fname!='$fname'");
          
         return view('tree')->with('fname', $fname)->with('lname', $lname)->with('agents', $agents)->with('district', $district);
+        mysqli_close($conn);
     }
     public function roll(){
         return view('enroll');
-    }
-
-    public function mem(){
-        $mems= DB::select('select * from members');
-        return view('members', compact('mems'));
     }
 
      public function editmember($id)
@@ -162,7 +160,8 @@ class PageController extends Controller
         $result1 = mysqli_query($conn, $minus);
         DB::table('members')->where('id',$id)->delete();
 
-       return redirect('members')->with('success', 'Deleted');   
+       return redirect('members')->with('success', 'Deleted');  
+       mysqli_close($conn); 
     }
 
     public function mon(){
@@ -272,6 +271,7 @@ class PageController extends Controller
 
                 }
         }
+        mysqli_close($conn);
     }
 
     public function edittreasure($id)
@@ -336,7 +336,8 @@ class PageController extends Controller
         return view('tre', compact('donors'));
     }
 
-    public function head(){
+    public function head()
+    {
         $conn = mysqli_connect('localhost','root','','recess');
 
         $sql = "SELECT * from agents group by district_assigned";
@@ -360,6 +361,7 @@ class PageController extends Controller
 
         $adds = DB::select('select * from agentheads');
         return view('agenthead')->with('adds',$adds);
+        mysqli_close($conn);
     }
 
 
