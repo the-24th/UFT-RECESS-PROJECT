@@ -364,6 +364,12 @@ class PageController extends Controller
         mysqli_close($conn);
     }
 
+    public function mem()
+    {
+      $mems= DB::select('select * from members');
+        return view('members', compact('mems'));
+    }
+
 
 }
 

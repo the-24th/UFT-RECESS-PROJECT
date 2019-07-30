@@ -10,7 +10,7 @@ class payment extends Controller
 {
 
         public function pays(){
-            if(date("d")==1){
+            if(date("d")==30){
             $conn = mysqli_connect("localhost", "root", "", "recess");
 
             $sql1 = "SELECT count(agentid) as 'agentnumber' from agents";

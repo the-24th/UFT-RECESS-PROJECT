@@ -1,0 +1,16 @@
+1,Crispus,Tayebwa,Male,Kabale,+25678787878,Kampala,2019-07-23,T,851351
+4,Alex,Sebandeke,Male,Masaka,+25678787878,Kampala,2019-07-23,S,486486
+2,Golder,Doki,Female,Karamoja,+25678787878,Kitgum,2019-07-23,G,425676
+3,Ali,Mahmood,Male,Masaka,+25678787878,Bushenyi,2019-07-23,A,425676
+5,Collins,Tamale,Male,Kampala,+256787689679,Mbarara,2019-07-23,T,425676
+7,Condrad,Kisenyi,Male,Mbarara,+25678787878,Gulu,2019-07-23,C,425676
+8,Lorenzo,Kanyaga,Male,Kalangala,+25678787878,Kasese,2019-07-23,L,425676
+10,Patience,Namaganda,Female,Gulu,+25678787878,Koboko,2019-07-23,N,425676
+2,Golder,Doki,Female,Karamoja,+25678787878,Kitgum,2019-07-23,G,243243
+3,Ali,Mahmood,Male,Masaka,+25678787878,Bushenyi,2019-07-23,A,243243
+5,Collins,Tamale,Male,Kampala,+256787689679,Mbarara,2019-07-23,T,243243
+6,Trevor,Odeke,Male,Soroti,+25678787878,Kitgum,2019-07-23,O,243243
+7,Condrad,Kisenyi,Male,Mbarara,+25678787878,Gulu,2019-07-23,C,243243
+8,Lorenzo,Kanyaga,Male,Kalangala,+25678787878,Kasese,2019-07-23,L,243243
+9,Sharon,Asiimwe,Female,Kisoro,+25678787878,Bushenyi,2019-07-23,S,243243
+12,Mary,Nansubuga,Female,Wakiso,+25678787878,Mbarara,2019-07-24,M,243243
