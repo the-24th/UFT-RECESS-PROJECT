@@ -89,7 +89,7 @@ Route::get('/donation', 'donationgraph@draw');
 
 Route::get('/enroll', 'donationgraph@roll');
 
-Route::get('/members', 'members@mem');
+Route::get('/members', 'PageController@mem');
 
 Route::get('/moneyregister', 'PageController@mon');
 
