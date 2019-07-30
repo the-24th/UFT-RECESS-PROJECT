@@ -227,7 +227,6 @@ class donationgraph extends Controller
 		}
     }
 
-
     public function funding()
     {
     	$conn = mysqli_connect("localhost", "root", "", "recess");
@@ -269,7 +268,7 @@ class donationgraph extends Controller
                 $change=(($num->people-$prev->be)/$prev->be)*100;}
 
                 foreach($man as $ma){
-
+       // echo "$name->month, $num->people, $prev->be, $change <br/>";
        $chart_data .= "{ month:'".$ma->girls."', amount:".$change."}, ";
 				}
 			}

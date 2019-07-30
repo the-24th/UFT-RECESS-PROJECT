@@ -51,7 +51,8 @@
                     <td>{{$add->signature}}</td>
                     <td>
 
-                            <a href="editagenthead/{{$add->agentid}}" onclick="var r = confirm('Do you want to edit this agenthead information?'); if (r==true){return true;}else{return false;}"><span class="ti-pencil"></span></a>
+                            <a href="editagenthead/{{$add->agentid}}"><span class="ti-pencil"></span></a>
+                            <a href="/deleteagenthead/{{$add->agentid}}"><span class="ti-trash"></span></a>
                         </td>
                     </tr>
 

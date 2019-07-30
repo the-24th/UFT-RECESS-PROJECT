@@ -16,9 +16,7 @@
 	<br /><br />
     <div class="container" style="width:900px">
 
-    <h2 style="align:center"><u>BAR GRAPH SHOWING VARIATIONS IN FUNDING PER MONTH.</u></h2>
-
-
+	<h2 style="align:center"><u>BAR GRAPH SHOWING VARIATIONS IN FUNDING PER MONTH.</u></h2>
    <br /><br />
    <div id="chart"></div>
 

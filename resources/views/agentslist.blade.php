@@ -64,15 +64,15 @@
                                     <td>{{$add->district_assigned}}</td>
                                     <td>{{$add->date}}</td>
                                     <td>{{$add->signature}}</td>
+                                
 
-
-
-
+                                    
+                                  
                                     <td>
 
 
-                                        <a href="editagent/{{$add->agentid}}" onclick="var r = confirm('Do you want to edit this agent information?'); if (r==true){return true;}else{return false;}"><span class="ti-pencil"></span></a>
-                                        <a href="/deleteagent/{{$add->agentid}}" onclick="var r = confirm('Do you want to delete this agent?'); if (r==true){return true;}else{return false;}"><span class="ti-trash"></span></a>
+                                        <a href="editagent/{{$add->agentid}}"><span class="ti-pencil"></span></a>
+                                        <a href="/deleteagent/{{$add->agentid}}"><span class="ti-trash"></span></a>
 
                                     </td>
 

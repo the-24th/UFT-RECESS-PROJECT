@@ -54,10 +54,9 @@
                                         <td>{{$mem->recommender}}</td>
                                         <td>
 
-
+                                              
                                         <a href="editmember/{{$mem->id}}"><span class="ti-pencil"></span></a>
-                                        <a href="/deletemember/{{$mem->id}}" onclick="var r = confirm('Do you want to delete this member from the party?'); if (r==true){return true;}else{return false;}">
-                                            <span class="ti-trash"></span></a>
+                                        <a href="/deletemember/{{$mem->id}}"><span class="ti-trash"></span></a>
 
                                             </td>
 

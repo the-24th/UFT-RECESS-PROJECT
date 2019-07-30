@@ -35,7 +35,7 @@ class members extends Controller
 						values('$id','$name1 $name2','$gender','$district','$date','$enrolledby','$recommender')";
 						DB::update("UPDATE districts set members_enrolled=members_enrolled+1 where name='$district'");
 						$result = mysqli_query($conn,$sql);
-						if (!$result)
+						if (!$result) 
 						{
 				    		die('Could not query table:'.mysqli_error($conn));
 						}
@@ -56,7 +56,7 @@ class members extends Controller
 					    die('Could not query table:'.mysqli_error($conn));
 									}
 				}
-
+				
 			}
 			else if(count($carray)==8)
 			{
@@ -74,7 +74,7 @@ class members extends Controller
 									}
 				}
 			}
-
+				
 			}
 			fclose($file);
 			$log_file = "/opt/lampp/htdocs/Kampala.txt";
@@ -105,7 +105,7 @@ class members extends Controller
 						values('$id','$name1 $name2','$gender','$district','$date','$enrolledby','$recommender')";
 						DB::update("UPDATE districts set members_enrolled=members_enrolled+1 where name='$district'");
 						$result = mysqli_query($conn,$sql);
-						if (!$result)
+						if (!$result) 
 						{
 				    		die('Could not query table:'.mysqli_error($conn));
 						}
@@ -126,7 +126,7 @@ class members extends Controller
 					    die('Could not query table:'.mysqli_error($conn));
 									}
 				}
-
+				
 			}
 			else if(count($carray)==8)
 			{
@@ -144,7 +144,7 @@ class members extends Controller
 									}
 				}
 			}
-
+				
 			}
 			fclose($file);
 			$log_file = "/opt/lampp/htdocs/Kitgum.txt";
@@ -175,7 +175,7 @@ class members extends Controller
 						values('$id','$name1 $name2','$gender','$district','$date','$enrolledby','$recommender')";
 						DB::update("UPDATE districts set members_enrolled=members_enrolled+1 where name='$district'");
 						$result = mysqli_query($conn,$sql);
-						if (!$result)
+						if (!$result) 
 						{
 				    		die('Could not query table:'.mysqli_error($conn));
 						}
@@ -196,7 +196,7 @@ class members extends Controller
 					    die('Could not query table:'.mysqli_error($conn));
 									}
 				}
-
+				
 			}
 			else if(count($carray)==8)
 			{
@@ -214,7 +214,7 @@ class members extends Controller
 									}
 				}
 			}
-
+				
 			}
 			fclose($file);
 			$log_file = "/opt/lampp/htdocs/Bushenyi.txt";
@@ -245,7 +245,7 @@ class members extends Controller
 						values('$id','$name1 $name2','$gender','$district','$date','$enrolledby','$recommender')";
 						DB::update("UPDATE districts set members_enrolled=members_enrolled+1 where name='$district'");
 						$result = mysqli_query($conn,$sql);
-						if (!$result)
+						if (!$result) 
 						{
 				    		die('Could not query table:'.mysqli_error($conn));
 						}
@@ -266,7 +266,7 @@ class members extends Controller
 					    die('Could not query table:'.mysqli_error($conn));
 									}
 				}
-
+				
 			}
 			else if(count($carray)==8)
 			{
@@ -284,7 +284,7 @@ class members extends Controller
 									}
 				}
 			}
-
+				
 			}
 			fclose($file);
 			$log_file = "/opt/lampp/htdocs/Mbarara.txt";
@@ -315,7 +315,7 @@ class members extends Controller
 						values('$id','$name1 $name2','$gender','$district','$date','$enrolledby','$recommender')";
 						DB::update("UPDATE districts set members_enrolled=members_enrolled+1 where name='$district'");
 						$result = mysqli_query($conn,$sql);
-						if (!$result)
+						if (!$result) 
 						{
 				    		die('Could not query table:'.mysqli_error($conn));
 						}
@@ -336,7 +336,7 @@ class members extends Controller
 					    die('Could not query table:'.mysqli_error($conn));
 									}
 				}
-
+				
 			}
 			else if(count($carray)==8)
 			{
@@ -354,7 +354,7 @@ class members extends Controller
 									}
 				}
 			}
-
+				
 			}
 			fclose($file);
 			$log_file = "/opt/lampp/htdocs/Gulu.txt";
@@ -385,7 +385,7 @@ class members extends Controller
 						values('$id','$name1 $name2','$gender','$district','$date','$enrolledby','$recommender')";
 						DB::update("UPDATE districts set members_enrolled=members_enrolled+1 where name='$district'");
 						$result = mysqli_query($conn,$sql);
-						if (!$result)
+						if (!$result) 
 						{
 				    		die('Could not query table:'.mysqli_error($conn));
 						}
@@ -405,7 +405,7 @@ class members extends Controller
 					    die('Could not query table:'.mysqli_error($conn));
 									}
 				}
-
+				
 			}
 			else if(count($carray)==8)
 			{
@@ -423,7 +423,7 @@ class members extends Controller
 									}
 				}
 			}
-
+				
 			}
 			fclose($file);
 			$log_file = "/opt/lampp/htdocs/Kasese.txt";
@@ -454,7 +454,7 @@ class members extends Controller
 						values('$id','$name1 $name2','$gender','$district','$date','$enrolledby','$recommender')";
 						DB::update("UPDATE districts set members_enrolled=members_enrolled+1 where name='$district'");
 						$result = mysqli_query($conn,$sql);
-						if (!$result)
+						if (!$result) 
 						{
 				    		die('Could not query table:'.mysqli_error($conn));
 						}
@@ -475,7 +475,7 @@ class members extends Controller
 					    die('Could not query table:'.mysqli_error($conn));
 									}
 				}
-
+				
 			}
 			else if(count($carray)==8)
 			{
@@ -493,7 +493,7 @@ class members extends Controller
 									}
 				}
 			}
-
+				
 			}
 			fclose($file);
 			$log_file = "/opt/lampp/htdocs/Koboko.txt";
@@ -524,7 +524,7 @@ class members extends Controller
 						values('$id','$name1 $name2','$gender','$district','$date','$enrolledby','$recommender')";
 						DB::update("UPDATE districts set members_enrolled=members_enrolled+1 where name='$district'");
 						$result = mysqli_query($conn,$sql);
-						if (!$result)
+						if (!$result) 
 						{
 				    		die('Could not query table:'.mysqli_error($conn));
 						}
@@ -545,7 +545,7 @@ class members extends Controller
 					    die('Could not query table:'.mysqli_error($conn));
 									}
 				}
-
+				
 			}
 			else if(count($carray)==8)
 			{
@@ -563,7 +563,7 @@ class members extends Controller
 									}
 				}
 			}
-
+				
 			}
 			fclose($file);
 			$log_file = "/opt/lampp/htdocs/Mbale.txt";
