@@ -19,7 +19,7 @@
                 {{ csrf_field() }}
             <div class="form-group"><label for="first_name" class=" form-control-label"></label><input name="fname" type="text" id="fname" placeholder="Enter first name" required class="form-control"></div>
             <div class="form-group"><label for="company" class=" form-control-label"></label><input name="lname" type="text" id="lname" placeholder="Enter last name" required class="form-control"></div>
-            <div class="form-group"><label for="city" class=" form-control-label"></label><input name="telephone" type="text" id="number" placeholder="Enter a telephone number" required class="form-control" minlength="10"></div>
+            <div class="form-group"><label for="city" class=" form-control-label"></label><input name="telephone" type="text" id="tel" placeholder="Enter a telephone number" required class="form-control" maxlength="10" pattern="[0-9]{10}" ></div>
                         <div class="row form-group">
                                 <div class="col-8">
                                     <div class="form-group"><label for="postal-code" class=" form-control-label"></label><input name="district" type="district" id="" placeholder="District Name" required class="form-control"></div>
@@ -36,7 +36,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group"><label for="country" class=" form-control-label"></label><input name="sign" type="text" id="sign" placeholder="Signature (single character) e.g B" required class="form-control"></div>
-                                    <button type="submit" class="btn" onsubmit="validate()" >Register</button>
+                                    <button type="submit" class="btn" >Register</button>
                                     <button type="reset" class="btn">Refresh</button>
                                 </form>
                                 </div>
@@ -45,29 +45,6 @@
 
                                 </div>
                             </div>
-                            <script type="text/javascript">
-                              function check(){
-                                  var first=document.getElementById('fname');
-                                  var last=document.getElementById('lname');
-                                  var phone=document.getElementById('number');
-                                  var date=document.getElementById('date');
-
-                                  if(phone.value[0] != 0)
-                                    {
-                                    document.getElementById("number").innerHTML = "<h5 style='color: red'>Error! The number should be start with a zero.</h5>";
-
-                                    }
-
-                                     if(phone.value.length > 10 || phone.value.length < 10 )
-                                    {
-                                     document.getElementById("number").innerHTML = "<span style='color: red'>Error! The number should be 10 digits long.</span>";
-
-                                    }
-
-                              }
-
-                              validate();
-                                </script>
 
 @endsection
 

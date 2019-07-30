@@ -12,7 +12,7 @@ class search extends Controller
     {
         $look = DB::select('select * from agents where ');
     }*/
-
+  
     public function members(Request $request)
     {
         $finds = DB::table('members')-> where ('district', '=', [$request->search])

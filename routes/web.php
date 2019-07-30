@@ -37,8 +37,6 @@ Route::get('editagenthead/{agentid}','PageController@editagenthead');
 
 Route::post('/updateagenthead/{agentid}', 'PageController@updateagenthead');
 
-Route::get('/deleteagenthead/{agentid}', 'PageController@deleteagenthead');
-
 Route::get('editmember/{id}','PageController@editmember');
 
 Route::post('/updatemember/{id}', 'PageController@updatemember');
@@ -94,6 +92,8 @@ Route::get('/members', 'members@mem');
 Route::get('/moneyregister', 'PageController@mon');
 
 Route::get('/upgrade', 'PageController@up');
+
+Route::get('/period', 'donationgraph@period');
 
 
 

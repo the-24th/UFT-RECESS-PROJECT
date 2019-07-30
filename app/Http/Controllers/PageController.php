@@ -34,6 +34,8 @@ class PageController extends Controller
         $agent_signature = $request->input('sign');
         //$agent->save();
         DB::update("update agents set fname=?, lname=?, number=?, district=?, date=?, district_assigned=?, sex=?, signature=? where agentid=?", [$agent_fname, $agent_lname, $agent_number, $agent_district, $agent_date, $agent_district_assigned, $agent_sex, $agent_signature, $agentid]);
+        DB::update("update agentheads set fname=?, lname=?, number=?, district=?, date=?, district_assigned=?, sex=?, signature=? where agentid=?", [$agent_fname, $agent_lname, $agent_number, $agent_district, $agent_date, $agent_district_assigned, $agent_sex, $agent_signature, $agentid]);
+
         return redirect('agentslist')->with('success', 'Data Updated');
     }
 
@@ -47,13 +49,12 @@ class PageController extends Controller
         $minus = "UPDATE districts set Number_of_agents=Number_of_agents-1 where name='$district_assigned'";
         $result1 = mysqli_query($conn, $minus);
         DB::table('agents')->where('agentid',$agentid)->delete();
+        DB::table('agentheads')->where('agentid',$agentid)->delete();
 
-<<<<<<< HEAD
+
        return redirect('agentslist')->with('success', 'Deleted');
-=======
-       return redirect('agentslist')->with('success', 'Deleted');  
-       mysqli_close($conn); 
->>>>>>> 6fe20e5c23294ced945ef5c9f4e6a9fdcaee6d2c
+       mysqli_close($conn);
+
     }
 
      public function editagenthead($agentid)
@@ -78,27 +79,11 @@ class PageController extends Controller
         $agent_signature = $request->input('sign');
         //$agent->save();
         DB::update("update agentheads set fname=?, lname=?, number=?, district=?, date=?, district_assigned=?, sex=?, signature=? where agentid=?", [$agent_fname, $agent_lname, $agent_number, $agent_district, $agent_date, $agent_district_assigned, $agent_sex, $agent_signature, $agentid]);
+        DB::update("update agents set fname=?, lname=?, number=?, district=?, date=?, district_assigned=?, sex=?, signature=? where agentid=?", [$agent_fname, $agent_lname, $agent_number, $agent_district, $agent_date, $agent_district_assigned, $agent_sex, $agent_signature, $agentid]);
+
         return redirect('agenthead')->with('success', 'Data Updated');
     }
 
-    public function deleteagenthead($agentid)
-    {
-        $conn = mysqli_connect('localhost','root','','recess');
-        $sql = "SELECT * from agentheads where agentid= $agentid";
-        $result1 = mysqli_query($conn, $sql);
-        $data1 = mysqli_fetch_array($result1);
-        $district_assigned = $data1['district_assigned'];
-        $minus = "UPDATE districts set Number_of_agents=Number_of_agents-1 where name='$district_assigned'";
-        $result1 = mysqli_query($conn, $minus);
-        DB::table('agentheads')->where('agentid',$agentid)->delete();
-
-<<<<<<< HEAD
-       return redirect('agenthead')->with('success', 'Deleted');
-=======
-       return redirect('agenthead')->with('success', 'Deleted');   
-       mysqli_close($conn);
->>>>>>> 6fe20e5c23294ced945ef5c9f4e6a9fdcaee6d2c
-    }
 
     public function list(){
 
@@ -173,8 +158,8 @@ class PageController extends Controller
         DB::table('members')->where('id',$id)->delete();
 
 
-       return redirect('members')->with('success', 'Deleted');  
-       mysqli_close($conn); 
+       return redirect('members')->with('success', 'Deleted');
+       mysqli_close($conn);
 
     }
 
