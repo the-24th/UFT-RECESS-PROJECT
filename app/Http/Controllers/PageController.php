@@ -48,12 +48,10 @@ class PageController extends Controller
         $result1 = mysqli_query($conn, $minus);
         DB::table('agents')->where('agentid',$agentid)->delete();
 
-<<<<<<< HEAD
-       return redirect('agentslist')->with('success', 'Deleted');
-=======
+
        return redirect('agentslist')->with('success', 'Deleted');  
        mysqli_close($conn); 
->>>>>>> 6fe20e5c23294ced945ef5c9f4e6a9fdcaee6d2c
+
     }
 
      public function editagenthead($agentid)
@@ -92,12 +90,10 @@ class PageController extends Controller
         $result1 = mysqli_query($conn, $minus);
         DB::table('agentheads')->where('agentid',$agentid)->delete();
 
-<<<<<<< HEAD
-       return redirect('agenthead')->with('success', 'Deleted');
-=======
+
        return redirect('agenthead')->with('success', 'Deleted');   
        mysqli_close($conn);
->>>>>>> 6fe20e5c23294ced945ef5c9f4e6a9fdcaee6d2c
+
     }
 
     public function list(){

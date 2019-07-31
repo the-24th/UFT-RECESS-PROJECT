@@ -40,12 +40,9 @@ int main(int argc, char **argv){
 	char sim[200];
 	char let[28] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int aa,bb = 0;
-	int tt;
-	char logname1[200],logname2[200],file[200];
-	
 	
    
-	int a,b;
+	int a;
 
 	if((sock=socket(AF_INET, SOCK_STREAM, 0)) == -1)
 	{
@@ -85,22 +82,9 @@ int main(int argc, char **argv){
 		strcpy(district,msg);
 		printf("You typed :%s\n",district);
 		strcat(district,".txt");
-		b = recv(cli, msg, 1024, 0);
-		printf("Name : %s",msg);
-			char *file = argv[1];
-			file = "agents.txt";
-			FILE *ptr;
-   				ptr = fopen(file, "r");
-			  	while(!feof(ptr))
-       			{
-        		fscanf(ptr, "%[^,],%s\n", logname1, logname2);
-			if(strcmp(logname1,msg)==0 || strcmp(logname2,msg) == 0)
-			{
-				printf("Valid user name");
-			}
-				   }		
+		
 
-		fclose(ptr);
+		
 		received = 1;
 		here:
 		while(received)
@@ -113,11 +97,11 @@ int main(int argc, char **argv){
 			printf("\nReceived message: %s", msg);
 			token = strtok(msg," ");
 			strcpy(token1,token);
-			strcpy(token2,token + 10);
+			strcpy(token2,token + 11);
 			strcpy(token3,token + 7);
 			strcpy(token4, token + 5);
 			
-			if(strcmp(token1,"Addmember") == 0)
+			if(strcmp(token1,"Add_member") == 0)
 			{
 				
 			
@@ -151,24 +135,27 @@ int main(int argc, char **argv){
 				}
 				else{
 					fclose(fp);
-					FILE *src;
-					FILE *dest;
-					src = fopen(token2,"r");
-					dest = fopen(district,"w");
+					FILE *cp;
+					FILE *gg;
+					cp = fopen(token2,"r");
+					gg = fopen(district,"a");
 					printf("\nYou want to add a file");
 					
 			
-				c = getc(src);
+				c = getc(cp);
 				while(c != EOF)
 				{
-				
-				fputc(c, dest);
+				fgets(buffer,1024, cp);
+				fputs(buffer, gg);
 				printf("\n%s",buffer);
-				c = getc(src);
+				c = getc(cp);
 				}
+				
+				
 
-				fclose(src);
-				fclose(dest);
+				
+				
+				fclose(cp);
 				
 				
 				send(cli, "File sent successfully", 23, 0);
@@ -195,7 +182,7 @@ int main(int argc, char **argv){
 						bb++;
 					}
 				}
-				if(bb > 5)
+				if(bb > 4)
 				{
 				send(cli, "Invalid number of inputs", 25, 0);	
 				goto here;
@@ -230,7 +217,7 @@ int main(int argc, char **argv){
 			else if(strcmp(token1,"Search") == 0)
 			{
 				printf("\nYou want to search for %s\n",token3); 
-				for(aa=0; token3[aa] != '\0'; aa++)
+				for(aa=0; token2[aa] != '\0'; aa++)
 				{
 					if(token3[aa] == ' ')
 					{
@@ -249,13 +236,11 @@ int main(int argc, char **argv){
 			  	while(!feof(ptr))
        			{
         		fscanf(ptr, "%[^ ] %[^ ] %[^ ] %[^ ] %s\n", name, name2 , date, gender, agent);
-        		if(strcmp(name,token3) == 0||strcmp(name2,token3) == 0 || strcmp(agent,token3) == 0 || strcmp(date,token3) == 0)
+        		if(strcmp(name,token3) == 0 || strcmp(agent,token3) == 0 || strcmp(date,token3) == 0)
         		{
 					printf("A match has been found\n");
 					printf("Name of member: %s\n", name);
 					send(cli, name, strlen(name), 0);
-					send(cli, " ", 1, 0);
-					send(cli, name2, strlen(name2), 0);
 					send(cli, " ", 1, 0);
 					printf("Date: %s\n",date);
 					send(cli, date, strlen(date), 0);
@@ -266,22 +251,20 @@ int main(int argc, char **argv){
 					printf("Name of agent: %s\n",agent);
 					send(cli, agent, strlen(agent), 0);
 					send(cli, " ", 1, 0);
-					goto here;
+					break;
 					
             
         		}
 	
     }
-	send(cli, "No search results", 18, 0);
+	
 
 			}
-			
 			else if(strcmp(token1,"check_status") == 0)
 			{
-		
 			
 			
-  		FILE* fn;
+  			FILE* fn;
     	char *name = argv[1];
     	name = district;
     	fn = fopen(name,"r+");
@@ -291,25 +274,13 @@ int main(int argc, char **argv){
         fscanf(fn, "%[^ ] %s\n", sign, sim);
         if(strcmp(sign,"Signature") == 0)
         {
-			printf(" %c",sim[0]);
-			printf("You want to check");
-			for(tt=0; tt < 29; tt++)
-			{
-				if(sim[0] == let[tt]){
-					send(cli, "This file is valid", 20, 0);
-					
-					goto here;
-				}
-				
-			}
-           
 			
+            send(cli, "The file is valid", 18, 0);
             
 		}
 		
 
     }
-	printf("\n%d",tt);
 	 send(cli, "The file is invalid", 20, 0);
 fclose(fn);  
 
@@ -334,7 +305,6 @@ fclose(fn);
 				fputs("\n",fp);
 				send(cli, "Signature received", 19, 0);
 				fclose(fp);
-				goto here;
 			}
 			else
 			{
