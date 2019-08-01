@@ -1,6 +1,8 @@
 @extends('layouts.adminhome')
 @section('title', 'Hierarchy')
 @section('content')
+
+
 <html>
   <head>
     <script type="text/javascript" src="{{asset('https://www.gstatic.com/charts/loader.js')}}"></script>
@@ -19,11 +21,18 @@
           [{v:'@php echo $fname." ".$lname;@endphp', f:'@php echo $fname." ".$lname;@endphp<div style="color:red; font-style:italic">AGENT HEAD</div>'},
            '', 'THE AGENT HEAD'],
           @foreach($agents as $agent)
-           ['{{$agent->fname}}','@php echo $fname." ".$lname;@endphp', 'AGENT'],
+           ['{{$agent->fname." ".$agent->lname}}.<br/><div style="color:blue; font-style:italic">AGENT</div>','@php echo $fname." ".$lname;@endphp', 'AGENT'],
           @endforeach
         ]);
-       
-          
+
+
+
+
+
+
+
+
+
         // Create the chart.
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
         // Draw the chart, setting the allowHtml option to true for the tooltips.
@@ -41,10 +50,10 @@
                                     </label>
                                     </form>
                                 </div>
-                                   <div class="container" style=="width:900px">
-<h2 align="center"><u>HIERACHY CHART FOR THE AGENTS IN @php echo $district @endphp .</u></h2>
+                                   <div class="container" style="width:900px">
+<h2 style="align:center"><u>HIERACHY CHART FOR THE AGENTS IN @php echo $district @endphp .</u></h2>
     <div id="chart_div"></div>
- 
+
   </body>
 </html>
 @endsection

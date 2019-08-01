@@ -23,6 +23,9 @@ class CreateMembersTable extends Migration
             $table->string('recommender');
             $table->timestamps();
         });
+
+
+
     }
 
     /**

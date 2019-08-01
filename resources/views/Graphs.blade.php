@@ -28,9 +28,9 @@ $chart_data = substr($chart_data, 0, -2);
   <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 
 </head>
-<body>
+<body style="margin-top:4px">
 	<br /><br />
-    <div class="container" style="width:900px">
+    <div class="container" style="width:900px;">
         <div class="container" style="width:900px">
             <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
                                            <form method="post" action="/graphsearch">

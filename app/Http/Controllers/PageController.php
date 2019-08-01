@@ -19,7 +19,7 @@ class PageController extends Controller
         return view('layouts.agentedit', ['agent'=>$agent]);
     }
 
-   
+
           public function updateagent(Request $request, $agentid)
     {
         //$agent = agent::find($agentid);
@@ -48,8 +48,10 @@ class PageController extends Controller
         $result1 = mysqli_query($conn, $minus);
         DB::table('agents')->where('agentid',$agentid)->delete();
 
+
        return redirect('agentslist')->with('success', 'Deleted');  
        mysqli_close($conn); 
+
     }
 
      public function editagenthead($agentid)
@@ -59,7 +61,7 @@ class PageController extends Controller
         return view('layouts.agentheadedit', ['agent'=>$agent]);
     }
 
-   
+
           public function updateagenthead(Request $request, $agentid)
     {
         //$agent = agent::find($agentid);
@@ -88,8 +90,10 @@ class PageController extends Controller
         $result1 = mysqli_query($conn, $minus);
         DB::table('agentheads')->where('agentid',$agentid)->delete();
 
+
        return redirect('agenthead')->with('success', 'Deleted');   
        mysqli_close($conn);
+
     }
 
     public function list(){
@@ -118,11 +122,15 @@ class PageController extends Controller
         $lname = $data['lname'];
 
 
-        $agents = DB::select("SELECT fname from agents where district_assigned ='$district' and fname!='$fname'");
-         
+
+        $agents = DB::select("SELECT * from agents where district_assigned ='$district' and fname!='$fname'");
+
         return view('tree')->with('fname', $fname)->with('lname', $lname)->with('agents', $agents)->with('district', $district);
+
         mysqli_close($conn);
+
     }
+
     public function roll(){
         return view('enroll');
     }
@@ -134,7 +142,7 @@ class PageController extends Controller
         return view('layouts.memberedit', ['mem'=>$mem]);
     }
 
-   
+
           public function updatemember(Request $request, $id)
     {
         //$agent = agent::find($agentid);
@@ -160,8 +168,10 @@ class PageController extends Controller
         $result1 = mysqli_query($conn, $minus);
         DB::table('members')->where('id',$id)->delete();
 
+
        return redirect('members')->with('success', 'Deleted');  
        mysqli_close($conn); 
+
     }
 
     public function mon(){
@@ -178,7 +188,7 @@ class PageController extends Controller
         foreach ($number as $numeral) {
             $tots = $numeral->total;
         }
-        
+
         while($names[] = mysqli_fetch_array($result))
         {
             if(++$counter==$tots)
@@ -199,7 +209,7 @@ class PageController extends Controller
                             return view('upgrade')->with('data2',$data2);
                          }
                          else continue;
-                         
+
                         }
                         else if($n==1)
                         {
@@ -212,7 +222,7 @@ class PageController extends Controller
                             $data2 = DB::select("SELECT * from members where name='$name'");
                             return view('upgrade')->with('data2',$data2);
                          }
-                         else continue;  
+                         else continue;
                         }
                         else if($n==2)
                         {
@@ -225,7 +235,7 @@ class PageController extends Controller
                             $data2 = DB::select("SELECT * from members where name='$name'");
                             return view('upgrade')->with('data2',$data2);
                          }
-                         else continue;  
+                         else continue;
                         }
                         else if($n==3)
                         {
@@ -238,7 +248,7 @@ class PageController extends Controller
                             $data2 = DB::select("SELECT * from members where name='$name'");
                             return view('upgrade')->with('data2',$data2);
                          }
-                         else continue;  
+                         else continue;
                         }
                         else if($n==4)
                         {
@@ -251,7 +261,7 @@ class PageController extends Controller
                             $data2 = DB::select("SELECT * from members where name='$name'");
                             return view('upgrade')->with('data2',$data2);
                          }
-                         else continue;  
+                         else continue;
                         }
                         else if($n==5)
                         {
@@ -264,7 +274,7 @@ class PageController extends Controller
                             $data2 = DB::select("SELECT * from members where name='$name'");
                             return view('upgrade')->with('data2',$data2);
                          }
-                         else continue;  
+                         else continue;
                         }
                         else return redirect('home')->with('failure', 'No Recommendations Available');
                     }
@@ -286,7 +296,7 @@ class PageController extends Controller
         DB::table('members')->where('id', '=', $id)->delete();
         return view('layouts.upgrading', ['data'=>$data]);
     }
-   
+
           public function updatetreasure(Request $request, $id)
     {
         $donor_name = $request->input('name');
@@ -301,10 +311,10 @@ class PageController extends Controller
 
     public function deletetreasure($id)
     {
-       
+
         DB::table('donations')->where('id',$id)->delete();
 
-       return redirect('tre')->with('success', 'Deleted');   
+       return redirect('tre')->with('success', 'Deleted');
     }
 
     public function high(){
