@@ -412,7 +412,11 @@
 			}
 		}
 			fclose($file);
+<<<<<<< HEAD
+			$log_file = "/opt/lampp/htdocs/Recess/Koboko.txt";
+=======
 			$log_file = "/opt/lampp/htdocsRecess/Koboko.txt";
+>>>>>>> 6c29d29a9a2f517571bf20cff9444e54fd80d0bb
 			file_put_contents($log_file, '');
 	}
 

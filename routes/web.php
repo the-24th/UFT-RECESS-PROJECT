@@ -96,8 +96,6 @@ Route::get('/moneyregister', 'PageController@mon');
 Route::get('/upgrade', 'PageController@up');
 
 
-
-
 Route::get('/bar', function () {
     return view('bargraph');
 });

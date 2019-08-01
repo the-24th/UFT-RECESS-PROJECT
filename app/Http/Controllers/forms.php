@@ -14,9 +14,15 @@ class forms extends Controller
     {
        $conn = mysqli_connect('localhost','root','','recess');
         $sql = "SELECT name from districts where Number_of_agents < 10";
+
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_array($result)){
-            $arr[$row["name"]]=$row;
+            foreach($row as $ro)
+            $min= DB::select("SELECT MIN(Number_of_agents) as min from districts where Number_of_agents<10");
+        foreach($min as $mi)
+            $district= DB::select("SELECT name as name from districts where Number_of_agents= $mi->min");
+        foreach($district as $dist)
+            $arr[$dist->name]=$row;
              }
              $rand= array_rand($arr);
         $plus = "UPDATE districts set Number_of_agents=Number_of_agents+1 where name='$rand'";
