@@ -55,8 +55,8 @@
                                         <td>{{ $find->amount}}</td>
                                         <td>
 
-                                    <a href="edittreasure/{{$donor->id}}"><span class="ti-pencil"></span></a>
-                                    <a href="/deletetreasure/{{$donor->id}}"><span class="ti-trash"></span></a>
+                                    <a href="edittreasure/{{$find->id}}"><span class="ti-pencil"></span></a>
+                                    <a href="/deletetreasure/{{$find->id}}"><span class="ti-trash"></span></a>
 
                                             </td>
                                     </tr>
