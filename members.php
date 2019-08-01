@@ -4,9 +4,9 @@
 		$conn = mysqli_connect('localhost','root','','recess') or die('couldnt connect'.mysqli_error());
 
 		//Kampala
-		if(file_exists("/opt/lampp/htdocs/Kampala.txt"))
+		if(file_exists("/opt/lampp/htdocs/Recess/Kampala.txt"))
 		{
-			$file = fopen("/opt/lampp/htdocs/Kampala.txt","r");
+			$file = fopen("/opt/lampp/htdocs/Recess/Kampala.txt","r");
 			while(!feof($file))
 			{
 				$content = fgets($file);
@@ -58,14 +58,14 @@
 			}
 		}
 		fclose($file);
-			$log_file = "/opt/lampp/htdocs/Kampala.txt";
+			$log_file = "/opt/lampp/htdocs/Recess/Kampala.txt";
 			file_put_contents($log_file, '');
 	}
 			
 		//Kitgum
-		if(file_exists("/opt/lampp/htdocs/Kitgum.txt"))
+		if(file_exists("/opt/lampp/htdocs/Recess/Kitgum.txt"))
 		{
-			$file = fopen("/opt/lampp/htdocs/Kitgum.txt","r");
+			$file = fopen("/opt/lampp/htdocs/Recess/Kitgum.txt","r");
 			while(!feof($file))
 			{
 				$content = fgets($file);
@@ -117,14 +117,14 @@
 			}
 		}
 		fclose($file);
-			$log_file = "/opt/lampp/htdocs/Kitgum.txt";
+			$log_file = "/opt/lampp/htdocs/Recess/Kitgum.txt";
 			file_put_contents($log_file, '');
 	}
 
 		//Bushenyi
-		if(file_exists("/opt/lampp/htdocs/Bushenyi.txt"))
+		if(file_exists("/opt/lampp/htdocs/Recess/Bushenyi.txt"))
 		{
-			$file = fopen("/opt/lampp/htdocs/Bushenyi.txt","r");
+			$file = fopen("/opt/lampp/htdocs/Recess/Bushenyi.txt","r");
 			while(!feof($file))
 			{
 				$content = fgets($file);
@@ -176,14 +176,14 @@
 			}
 		}
 		fclose($file);
-			$log_file = "/opt/lampp/htdocs/Bushenyi.txt";
+			$log_file = "/opt/lampp/htdocs/Recess/Bushenyi.txt";
 			file_put_contents($log_file, '');
 	}
 
 		//Mbarara
-		if(file_exists("/opt/lampp/htdocs/Mbarara.txt"))
+		if(file_exists("/opt/lampp/htdocs/Recess/Mbarara.txt"))
 		{
-			$file = fopen("/opt/lampp/htdocs/Mbarara.txt","r");
+			$file = fopen("/opt/lampp/htdocs/Recess/Mbarara.txt","r");
 			while(!feof($file))
 			{
 				$content = fgets($file);
@@ -235,14 +235,14 @@
 			}
 		}
 		fclose($file);
-			$log_file = "/opt/lampp/htdocs/Mbarara.txt";
+			$log_file = "/opt/lampp/htdocs/Recess/Mbarara.txt";
 			file_put_contents($log_file, '');
 	}
 
 		//Gulu
-		if(file_exists("/opt/lampp/htdocs/Gulu.txt"))
+		if(file_exists("/opt/lampp/htdocs/Recess/Gulu.txt"))
 		{
-			$file = fopen("/opt/lampp/htdocs/Gulu.txt","r");
+			$file = fopen("/opt/lampp/htdocs/Recess/Gulu.txt","r");
 			while(!feof($file))
 			{
 				$content = fgets($file);
@@ -294,14 +294,14 @@
 			}
 		}
 		fclose($file);
-			$log_file = "/opt/lampp/htdocs/Gulu.txt";
+			$log_file = "/opt/lampp/htdocs/Recess/Gulu.txt";
 			file_put_contents($log_file, '');
 	}
 
 		//Kasese
-		if(file_exists("/opt/lampp/htdocs/Kasese.txt"))
+		if(file_exists("/opt/lampp/htdocs/Recess/Kasese.txt"))
 		{
-			$file = fopen("/opt/lampp/htdocs/Kasese.txt","r");
+			$file = fopen("/opt/lampp/htdocs/Recess/Kasese.txt","r");
 			while(!feof($file))
 			{
 				$content = fgets($file);
@@ -353,14 +353,14 @@
 			}
 		}
 		fclose($file);
-			$log_file = "/opt/lampp/htdocs/Kasese.txt";
+			$log_file = "/opt/lampp/htdocs/Recess/Kasese.txt";
 			file_put_contents($log_file, '');
 	}
 
 		//Koboko
-		if(file_exists("/opt/lampp/htdocs/Koboko.txt"))
+		if(file_exists("/opt/lampp/htdocs/Recess/Koboko.txt"))
 		{
-			$file = fopen("/opt/lampp/htdocs/Koboko.txt","r");
+			$file = fopen("/opt/lampp/htdocs/Recess/Koboko.txt","r");
 			while(!feof($file))
 			{
 				$content = fgets($file);
@@ -412,14 +412,14 @@
 			}
 		}
 			fclose($file);
-			$log_file = "/opt/lampp/htdocs/Koboko.txt";
+			$log_file = "/opt/lampp/htdocs/Recess/Koboko.txt";
 			file_put_contents($log_file, '');
 	}
 
 		//Mbale
-		if(file_exists("/opt/lampp/htdocs/Mbale.txt"))
+		if(file_exists("/opt/lampp/htdocs/Recess/Mbale.txt"))
 		{
-			$file = fopen("/opt/lampp/htdocs/Mbale.txt","r");
+			$file = fopen("/opt/lampp/htdocs/Recess/Mbale.txt","r");
 			while(!feof($file))
 			{
 				$content = fgets($file);
@@ -472,7 +472,7 @@
 				
 			}
 			fclose($file);
-			$log_file = "/opt/lampp/htdocs/Mbale.txt";
+			$log_file = "/opt/lampp/htdocs/Recess/Mbale.txt";
 			file_put_contents($log_file, '');
 		}     
 ?>
