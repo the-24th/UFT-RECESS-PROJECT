@@ -20,6 +20,7 @@ int main() {
 	int  len, i, j;
 	int received;
 	char symbol;
+    int a,b;
 	
 	if((sock=socket(AF_INET, SOCK_STREAM, 0)) == -1)
 	{
@@ -44,9 +45,17 @@ int main() {
 		printf("Enter the name of the district :");
 		scanf("%s", input);
 		send(sock, input, strlen(input), 0);
-		printf("Enter your name :");	
+		there:
+        printf("Enter your name :");	
 		scanf("%s", input);
-		
+		send(sock, input, strlen(input), 0);
+		a = recv(sock, msg, 1024, 0);
+        printf("%s\n",msg);
+        if(strcmp(msg,"Invalid user-name") == 0)
+        {
+            goto there;
+        }
+
 	while(1)
 	{
 		printf("command >> ");
@@ -359,7 +368,9 @@ int main() {
 			
 		}
 		
+        memset(msg, 0, sizeof(msg));
 		received = recv(sock, msg, 1024, 0);
+        
 		if(received)
 		{
 			printf("%s\n",msg);
