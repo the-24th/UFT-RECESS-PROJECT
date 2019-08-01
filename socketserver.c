@@ -9,6 +9,7 @@
 #include<arpa/inet.h>
 #include<ctype.h>
 #include<sys/stat.h>
+#include<time.h>
 
 int main(int argc, char **argv){
 	int sock, cli;
@@ -40,11 +41,21 @@ int main(int argc, char **argv){
 	char sim[200];
 	char let[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int aa,bb = 0;
-	int tt;
-	char logname1[200],logname2[200],file[200];
+	int tt =0;
+	char logname1[200],logname2[200],file[200],lsign[2];
 	char username[200];
 	char pnum[2],pname1[200],pname2[200],pgender[200],pdistrict[200],ptel[200],pcity[200],pdate[200],payment[100],psign[100];
-	
+	char user[100];
+	int day, month, year;
+	char check_name1[200],check_name2[200],check_sign[100];
+	time_t now;
+	struct tm*local = localtime(&now);
+	day = local->tm_mday;
+	month = local->tm_mon + 1;
+	year = local->tm_year + 1990;
+	char num[10];
+	char the_date[30];
+
 	
    
 	int a,b;
@@ -85,18 +96,18 @@ int main(int argc, char **argv){
 		
 		a = recv(cli, msg, 1024, 0);
 		strcpy(district,msg);
-		printf("You typed :%s\n",district);
+		
 		strcat(district,".txt");
 		there:
 		b = recv(cli, msg, 1024, 0);
-		printf("Name : %s",msg);
+		
 			char *file = argv[1];
 			file = "agents.txt";
 			FILE *ptr;
    				ptr = fopen(file, "r");
 			  	while(!feof(ptr))
        			{
-        		fscanf(ptr, "%[^,],%s\n", logname1, logname2);
+        		fscanf(ptr, "%[^,],%[^,],%s\n", logname1, logname2,lsign);
 			if(strcmp(logname1,msg)==0 || strcmp(logname2,msg) == 0)
 			{
 				send(cli, "Valid user-name", 16, 0);
@@ -146,7 +157,7 @@ int main(int argc, char **argv){
 					int exist = stat(token2,&store);
 					if(exist == 0)
 					{
-					printf("You want to add a file");
+					
 					FILE *tp;
 					tp = fopen(token2,"r+");
 				if(tp != NULL){
@@ -207,7 +218,7 @@ int main(int argc, char **argv){
 						bb++;
 					}
 				}
-				if(bb > 4 || bb < 3 || bb == 0)
+				if(bb > 5 || bb < 3 || bb == 0)
 				{
 				send(cli, "Invalid number of inputs", 25, 0);	
 				goto here;
@@ -221,7 +232,7 @@ int main(int argc, char **argv){
 				if (fsize == 0)
 				{
 				fp = fopen(district,"w");
-				printf("\n%s",token2);
+				
 				fputs(token2, fp);
 				send(cli, "Member added successfully", 26, 0);
 				fputs("\n",fp);
@@ -230,6 +241,14 @@ int main(int argc, char **argv){
 				
 				
 				else{
+					sprintf(num, "%d", year);
+					strcpy(date,num);
+					strcat(date, "-");
+					sprintf(num, "%d", month);
+					strcat(date, num);
+					strcat(date, "-");
+					sprintf(num, "%d", day);
+					strcat(date, num);
 				fp =fopen(district,"a");
 				printf("\n%s",token2);
 				fputs(token2, fp);
@@ -285,24 +304,37 @@ int main(int argc, char **argv){
 		char *sfile = argv[1];
     	sfile = district;	
   		FILE* fs;
-    	fs = fopen(sfile,"r");
+    	fs = fopen(district,"r");
+		char *file = argv[1];
+			file = "agents.txt";
+			FILE *file2;
+   			file2 = fopen(file, "r");
 
     	while(!feof(fs))
     	{
-        fscanf(fs, "%[^ ] %s\n", sign, sim);
+        fscanf(fs, "%[^ ] %[^ ] %s \n", sign, sim, user);
         if(strcmp(sign,"Signature") == 0)
         {
+			
 			printf(" %c",sim[0]);
-			printf("You want to check");
-			for(tt=0; tt < 29; tt++)
+			printf("%s",user);
+				while(!feof(file2))
+       			{
+        		fscanf(file2, "%[^,],%[^,],%s\n", check_name1, check_name2,check_sign);
+			
+			if(strcmp(username,check_name1) ==0 || strcmp(username,check_name2) == 0){
+			if(sim[0] == check_sign[0])
 			{
-				if(sim[0] == let[tt]){
-					send(cli, "This file is valid", 20, 0);
-					
-					goto here;
-				}
 				
+				tt++;
+				send(cli, "Valid signature", 16, 0);
+				
+				goto here;
 			}
+			
+			
+				   }
+				   }
            
 			
             
@@ -310,8 +342,9 @@ int main(int argc, char **argv){
 		
 
     }
+	fclose(file2);
 	printf("\n%d",tt);
-	 send(cli, "The file is invalid", 20, 0);
+	 send(cli, "Your signature is incorrect", 28, 0);
 fclose(fs);  
 
 
@@ -334,7 +367,9 @@ fclose(fs);
 				fputs("Signature ",fp);
 				fputc(msg[0],fp);
 				fputs(" ",fp);
+				fputs(username,fp);
 				fputs("\n\n",fp);
+				fputs("here here\n",fp);
 				send(cli, "Signature received", 19, 0);
 				fclose(fp);
 				goto here;
